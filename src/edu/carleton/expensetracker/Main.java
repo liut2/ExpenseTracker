@@ -26,7 +26,7 @@ public class Main extends Application {
     public Scene createExpenseScene(){
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("/fxml/createExpense.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/fxml/viewExpense.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }

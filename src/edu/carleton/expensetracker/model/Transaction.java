@@ -1,5 +1,6 @@
 package edu.carleton.expensetracker.model;
 
+import java.io.*;
 import java.util.Date;
 
 /**
@@ -7,21 +8,19 @@ import java.util.Date;
  * Transaction.java
  * This enum serves as our model for expense tracker.
  */
-public enum Transaction {
-    INCOME("income"),
-    EXPENSE("expense");
+public class Transaction implements java.io.Serializable{
 
-    private String type;
+    private TransactionType type;
     private int value;
     private String category;
     private Date date;
     private String note;
 
-    public String getType() {
+    public TransactionType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TransactionType type) {
         this.type = type;
     }
 
@@ -60,20 +59,10 @@ public enum Transaction {
     public String toString() {
         return "Type is " + type + " value is " + value + " category is " + category + " date is " + date + " and note is "+ note;
     }
-    Transaction(String type){
+    Transaction(TransactionType type){
         this.type = type;
     }
 
-    /*
-    public static void main(String[] args) {
-        Transaction tran =  Transaction.EXPENSE;
-        tran.setCategory("food");
-        tran.setNote("I love food");
-        tran.setValue(14);
-        tran.setDate(new Date());
-        System.out.println(tran.toString());
-    }
-    */
 }
 
 
