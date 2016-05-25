@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * Created by taoliu on 5/23/16.
  * Transaction.java
- * This enum serves as our model for expense tracker.
+ * This class is the unit block object.
  */
 public class Transaction implements java.io.Serializable{
 
@@ -59,7 +59,7 @@ public class Transaction implements java.io.Serializable{
     public String toString() {
         return "Type is " + type + " value is " + value + " category is " + category + " date is " + date + " and note is "+ note;
     }
-    Transaction(TransactionType type){
+    public Transaction(TransactionType type){
         this.type = type;
     }
 
