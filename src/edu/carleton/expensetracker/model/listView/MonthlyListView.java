@@ -10,15 +10,18 @@ import java.util.List;
 
 /**
  * Created by chenx2 on 5/25/2016.
+ * This class handles the display of MonthlyListView. It takes a list of transactions and return a list of transactions within a month
  */
 public class MonthlyListView extends ListView{
 
-    public MonthlyListView(Record record) {
-        super(record);
+    public MonthlyListView(List<Transaction> transactions) {
+        super(transactions);
         this.transactions = getMonthlyTransactions();
     }
-
-    private List<Transaction> getMonthlyTransactions() {
+    /*
+    filter the list only to get transactions happened this month
+     */
+    public List<Transaction> getMonthlyTransactions() {
         Calendar cal = Calendar.getInstance();
 
         cal.set(Calendar.HOUR_OF_DAY, 0);

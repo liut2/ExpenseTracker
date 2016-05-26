@@ -11,14 +11,19 @@ import java.util.List;
 
 /**
  * Created by chenx2 on 5/25/2016.
+ * This class handles the display of Weekly Line Chart.
  */
 public class WeeklyLineChart extends LineChart {
-    public WeeklyLineChart(Record record) {
-        this.record = record;
+    public WeeklyLineChart(List<Transaction> transactions) {
+        this.transactions = transactions;
         this.expenseTransactionPerUnit = getDailyTransaction().get(0);
         this.incomeTransactionPerUnit = getDailyTransaction().get(1);
     }
 
+/**
+ *    takes a list of transactions
+ *    return a list of integers each represents the total expense or income within a day
+ */
     public List<int[]> getDailyTransaction() {
         Calendar cal = Calendar.getInstance();
 
@@ -33,7 +38,7 @@ public class WeeklyLineChart extends LineChart {
         List<int[]> tempList = new ArrayList<int[]>();
         int offset;
 
-        for (Transaction tran: record.transactions) {
+        for (Transaction tran: this.transactions) {
             Date tempDate = tran.getDate();
             if ((cal.getTime().before(tempDate) || cal.getTime().equals(tempDate))) {
                 offset = tran.getDate().getDay();

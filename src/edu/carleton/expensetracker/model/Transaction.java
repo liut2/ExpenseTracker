@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * Created by taoliu on 5/23/16.
  * Transaction.java
- * This class is the unit block object.
+ * This class contains the transaction model.
  */
 public class Transaction{
 
@@ -62,7 +62,12 @@ public class Transaction{
     public Transaction(TransactionType type){
         this.type = type;
     }
-
+    public Transaction(TransactionType type, Date date, String category, String note){
+        this.type = type;
+        this.category = category;
+        this.note = note;
+        this.date = date;
+    }
 }
 
 

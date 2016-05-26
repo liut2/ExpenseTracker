@@ -10,12 +10,14 @@ import java.util.List;
 
 /**
  * Created by chenx2 on 5/25/2016.
+ * This class handles the display of WeeklyListView. It takes a list of transactions and return a list of transactions within a week
  */
 public class WeeklyListView extends ListView{
-    public WeeklyListView(Record record) {
-        super(record);
+    public WeeklyListView(List<Transaction> transactions) {
+        super(transactions);
         this.transactions = getWeeklyTransactions();
     }
+
     /*
     filter the list only to get transactions happened this week
      */

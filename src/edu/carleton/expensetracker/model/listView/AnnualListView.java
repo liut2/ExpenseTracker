@@ -10,15 +10,18 @@ import java.util.List;
 
 /**
  * Created by chenx2 on 5/25/2016.
+ * This class handles the display of AnnualListView. It takes a list of transactions and return a list of transactions within a year
  */
 public class AnnualListView extends ListView{
 
-    public AnnualListView(Record record) {
-        super(record);
+    public AnnualListView(List<Transaction> transactions) {
+        super(transactions);
         this.transactions = getAnnualTransactions();
     }
-
-    private List<Transaction> getAnnualTransactions() {
+    /*
+    filter the list only to get transactions happened this year
+     */
+    public List<Transaction> getAnnualTransactions() {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, 0);
         cal.clear(Calendar.MINUTE);

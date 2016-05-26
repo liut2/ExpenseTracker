@@ -9,16 +9,19 @@ import java.util.List;
 
 /**
  * Created by chenx2 on 5/25/2016.
+ * This class handles the display of listView
  */
 public class ListView {
     protected List<Transaction> transactions;
 
-    public ListView(Record record){
-        this.transactions = record.transactions;
+    public ListView(List<Transaction> transactions){
+        this.transactions = transactions;
 
     }
 
-
+    /*
+    filter the list only to get expense transactions
+     */
     public List<Transaction> getExpenseTransactions(){
         List<Transaction> expenseTransactions = new ArrayList<Transaction>();
         for (Transaction tran : this.transactions){
@@ -29,6 +32,9 @@ public class ListView {
         return expenseTransactions;
     }
 
+    /*
+    filter the list only to get income transactions
+     */
     public List<Transaction> getIncomeTransactions(){
         List<Transaction> incomeTransactions = new ArrayList<Transaction>();
         for (Transaction tran : this.transactions){

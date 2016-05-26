@@ -12,9 +12,10 @@ import java.util.List;
 
 /**
  * Created by chenx2 on 5/25/2016.
+ * This class handles the display of Line Chart.
  */
 public class LineChartTest {
-    public static Record test(){
+    public static List<Transaction> test(){
         SimpleDateFormat newDateFormat = new SimpleDateFormat("MM/dd/yyyy");
         Date date1 = null, date2 = null, date3 = null, date4 = null, date5 = null;
         try {
@@ -48,7 +49,6 @@ public class LineChartTest {
         transactions.add(tran3);
         transactions.add(tran4);
         transactions.add(tran5);
-        Record record = new Record(transactions);
-        return record;
+        return transactions;
     }
 }

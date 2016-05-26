@@ -10,19 +10,22 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import static jdk.nashorn.internal.objects.Global.println;
-
 /**
  * Created by chenx2 on 5/25/2016.
+ * This class handles the display of Daily Line Chart.
  */
 public class DailyLineChart extends LineChart{
 
-    public DailyLineChart(Record record) {
-        this.record = record;
+    public DailyLineChart(List<Transaction> transactions) {
+        this.transactions = transactions;
         this.expenseTransactionPerUnit = getHourlyTransaction().get(0);
         this.incomeTransactionPerUnit = getHourlyTransaction().get(1);
     }
 
+/**
+ *    takes a list of transactions
+ *    return a list of integers each represents the total expense or income within an hour
+ */
     public List<int[]> getHourlyTransaction() {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, 0);
@@ -33,7 +36,7 @@ public class DailyLineChart extends LineChart{
         int[] incomeList = new int[24];
         List<int[]> tempList = new ArrayList<int[]>();
         int offset;
-        for (Transaction tran: record.transactions) {
+        for (Transaction tran: this.transactions) {
             Date tempDate = tran.getDate();
             if ((cal.getTime().before(tempDate) || cal.getTime().equals(tempDate))) {
                 offset = tempDate.getHours();
