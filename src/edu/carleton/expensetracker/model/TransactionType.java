@@ -4,7 +4,7 @@ package edu.carleton.expensetracker.model;
  * Created by chenx2 on 5/24/2016.
  */
 
-public enum TransactionType {
+public enum TransactionType implements java.io.Serializable{
     INCOME("income"),
     EXPENSE("expense");
 

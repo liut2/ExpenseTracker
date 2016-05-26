@@ -1,6 +1,8 @@
 package edu.carleton.expensetracker.model;
 
+
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,19 +12,19 @@ import java.util.List;
 public class Record implements java.io.Serializable{
     public List<Transaction> transactions;
 
-    public Record(List<Transaction> transaction){
-        this.transactions = transaction;
+    public Record(){
+        this.transactions = new ArrayList<Transaction>();
     }
 
-    public void addTransaction(Transaction transaction){
-        this.transactions.add(transaction);
+    public void addTransactions(List<Transaction> transactions){
+        this.transactions = transactions;
     }
 
     public void serializeRecord(){
         try
         {
             FileOutputStream fileOut =
-                    new FileOutputStream("/record.ser");
+                    new FileOutputStream("./resources/data/record.ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(this);
             out.close();
@@ -34,26 +36,42 @@ public class Record implements java.io.Serializable{
         }
     }
 
-    public void deserializeRecord(){
+    public List<Transaction> deserializeRecord(){
         Record e = null;
         try
         {
-            FileInputStream fileIn = new FileInputStream("/record.ser");
+            FileInputStream fileIn = new FileInputStream("./resources/data/record.ser");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             e = (Record) in.readObject();
+            System.out.println(e.transactions.size());
             in.close();
             fileIn.close();
-            this.transactions = e.transactions;
+            return e == null? new ArrayList<Transaction>(): e.transactions;
+
         }catch(IOException i)
         {
             i.printStackTrace();
-            return;
+            return null;
         }catch(ClassNotFoundException c)
         {
             System.out.println("Record class not found");
             c.printStackTrace();
-            return;
+            return null;
         }
+    }
+
+    public static void main(String[] args) {
+        Record wrapper = new Record();
+        wrapper.addTransactions(Test.test());
+        wrapper.serializeRecord();
+
+        /*
+        List<Transaction> transactions = wrapper.deserializeRecord();
+
+        for (Transaction tran : transactions) {
+            System.out.println(tran.toString());
+        }
+        */
     }
 
 }

@@ -1,5 +1,6 @@
 package edu.carleton.expensetracker.model.pieCharts;
 
+import edu.carleton.expensetracker.model.Test;
 import edu.carleton.expensetracker.model.Transaction;
 
 import java.util.ArrayList;

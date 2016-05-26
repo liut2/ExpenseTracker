@@ -1,8 +1,4 @@
-package edu.carleton.expensetracker.model.lineCharts;
-
-import edu.carleton.expensetracker.model.Record;
-import edu.carleton.expensetracker.model.Transaction;
-import edu.carleton.expensetracker.model.TransactionType;
+package edu.carleton.expensetracker.model;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -11,17 +7,17 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by chenx2 on 5/25/2016.
+ * Created by taoliu on 5/26/16.
  */
-public class LineChartTest {
-    public static Record test(){
+public class Test{
+    public static List<Transaction> test() {
         SimpleDateFormat newDateFormat = new SimpleDateFormat("MM/dd/yyyy");
         Date date1 = null, date2 = null, date3 = null, date4 = null, date5 = null;
         try {
             date1 = newDateFormat.parse("05/12/2016");
-            date2 = newDateFormat.parse("05/01/2016");
-            date3 = newDateFormat.parse("05/11/2016");
-            date4 = newDateFormat.parse("05/24/2016");
+            date2 = newDateFormat.parse("05/22/2016");
+            date3 = newDateFormat.parse("05/21/2016");
+            date4 = newDateFormat.parse("04/12/2016");
             date5 = new Date();
 
         } catch (ParseException e) {
@@ -48,7 +44,7 @@ public class LineChartTest {
         transactions.add(tran3);
         transactions.add(tran4);
         transactions.add(tran5);
-        Record record = new Record();
-        return record;
+        return transactions;
     }
 }
+
