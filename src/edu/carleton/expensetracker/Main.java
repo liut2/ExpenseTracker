@@ -13,9 +13,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setTitle("Personal Expense Tracker");
-        Scene scene = createExpenseScene();
+        //Scene createScene = createExpenseScene();
+        Scene viewScene = viewExpenseScene();
         // set the default window size
-        primaryStage.setScene(scene);
+        primaryStage.setScene(viewScene);
         primaryStage.show();
     }
 
@@ -26,7 +27,7 @@ public class Main extends Application {
     public Scene createExpenseScene(){
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("/fxml/viewExpense.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/fxml/createExpense.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }

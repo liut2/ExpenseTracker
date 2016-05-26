@@ -9,8 +9,9 @@
 <?import javafx.scene.control.ComboBox?>
 <?import java.lang.*?>
 
-<GridPane stylesheets="/css/viewExpense.css" fx:controller="edu.carleton.expensetracker.controllers.CreateExpenseController"
-          xmlns:fx="http://javafx.com/fxml" hgap="10" vgap="10">
+<?import javafx.scene.layout.VBox?>
+<VBox stylesheets="/css/viewExpense.css" fx:controller="edu.carleton.expensetracker.controllers.ViewExpenseController"
+      xmlns:fx="http://javafx.com/fxml">
 
     <HBox styleClass="nav" alignment="CENTER">
         <Button text="Day" />
@@ -41,4 +42,6 @@
             </TableColumn>
         </columns>
     </TableView>
-</GridPane>
+    <Button text="Create a new Record"  onAction="#onClickCreateNewRecord"/>
+</VBox>
+

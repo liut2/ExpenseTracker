@@ -1,8 +1,12 @@
 package edu.carleton.expensetracker.controllers;
 
+import edu.carleton.expensetracker.Main;
 import edu.carleton.expensetracker.model.Transaction;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
+import javafx.stage.Stage;
 
 import java.io.*;
 
@@ -14,7 +18,13 @@ import java.io.*;
 public class ViewExpenseController {
     @FXML
     private ComboBox<String> changeView;
-
+    @FXML
+    public void onClickCreateNewRecord(ActionEvent event) {
+        //redirect to create page
+        Stage stageTheEventSourceNodeBelongs = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Main main = new Main();
+        stageTheEventSourceNodeBelongs.setScene(main.createExpenseScene());
+    }
     public void loadRecord(){
         Transaction e = null;
         try
