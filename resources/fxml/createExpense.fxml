@@ -17,8 +17,8 @@
         <ToggleGroup fx:id="transactionType" />
     </fx:define>
     <HBox alignment="center" spacing="-1">
-        <ToggleButton fx:id="expense" onAction="#onClickExpenseButton" text="Expense" toggleGroup="$transactionType"/>
-        <ToggleButton fx:id="income" onAction="#onClickIncomeButton" text="Income" toggleGroup="$transactionType" />
+        <ToggleButton fx:id="expense" prefWidth="95" onAction="#onClickExpenseButton" text="Expense" toggleGroup="$transactionType"/>
+        <ToggleButton fx:id="income" prefWidth="95" onAction="#onClickIncomeButton" text="Income" toggleGroup="$transactionType" />
     </HBox>
     <HBox alignment="center">
         <Label fx:id="dateLabel"/>
