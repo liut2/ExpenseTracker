@@ -8,7 +8,7 @@ import java.util.Date;
  * Transaction.java
  * This class is the unit block object.
  */
-public class Transaction implements java.io.Serializable{
+public class Transaction{
 
     private TransactionType type;
     private int value;

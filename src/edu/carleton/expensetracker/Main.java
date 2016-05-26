@@ -13,7 +13,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setTitle("Personal Expense Tracker");
-        Scene scene = createExpenseScene();
+        Scene scene = viewExpenseScene();
         // set the default window size
         primaryStage.setScene(scene);
         primaryStage.show();

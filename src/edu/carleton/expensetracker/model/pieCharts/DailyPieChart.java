@@ -7,6 +7,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import static sun.misc.Version.print;
+import static sun.misc.Version.println;
+
 /**
  * Created by taoliu on 5/24/16.
  */
@@ -23,8 +26,8 @@ public class DailyPieChart extends PieChart {
         cal.clear(Calendar.SECOND);
         cal.clear(Calendar.MILLISECOND);
 
-        //System.out.println("Start of the day:       " + cal.getTime());
-        //System.out.println("... in milliseconds:      " + cal.getTimeInMillis());
+//        System.out.println("Start of the day:       " + cal.getTime());
+//        System.out.println("... in milliseconds:      " + cal.getTimeInMillis());
 
         List<Transaction> tempList = new ArrayList<Transaction>();
         for (Transaction tran: this.transactions) {
@@ -35,6 +38,8 @@ public class DailyPieChart extends PieChart {
         }
         return tempList;
     }
+
+
 
     public static void main(String[] args) {
         DailyPieChart day = new DailyPieChart(Test.test());
