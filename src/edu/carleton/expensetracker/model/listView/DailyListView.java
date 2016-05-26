@@ -1,5 +1,6 @@
-package edu.carleton.expensetracker.model.pieCharts;
+package edu.carleton.expensetracker.model.listView;
 
+import edu.carleton.expensetracker.model.Record;
 import edu.carleton.expensetracker.model.Transaction;
 
 import java.util.ArrayList;
@@ -7,15 +8,13 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import static sun.misc.Version.print;
-import static sun.misc.Version.println;
-
 /**
- * Created by taoliu on 5/24/16.
+ * Created by chenx2 on 5/25/2016.
  */
-public class DailyPieChart extends PieChart {
-    public DailyPieChart(List<Transaction> transactions) {
-        super(transactions);
+public class DailyListView extends ListView{
+
+    public DailyListView(Record record) {
+        super(record);
         this.transactions = getDailyTransactions();
     }
 
@@ -25,9 +24,6 @@ public class DailyPieChart extends PieChart {
         cal.clear(Calendar.MINUTE);
         cal.clear(Calendar.SECOND);
         cal.clear(Calendar.MILLISECOND);
-
-//        System.out.println("Start of the day:       " + cal.getTime());
-//        System.out.println("... in milliseconds:      " + cal.getTimeInMillis());
 
         List<Transaction> tempList = new ArrayList<Transaction>();
         for (Transaction tran: this.transactions) {
@@ -39,10 +35,4 @@ public class DailyPieChart extends PieChart {
         return tempList;
     }
 
-
-
-    public static void main(String[] args) {
-        DailyPieChart day = new DailyPieChart(Test.test());
-        System.out.println(day.getExpenseTransactions().size());
-    }
 }

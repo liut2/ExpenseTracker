@@ -9,16 +9,18 @@
 <?import javafx.scene.control.ComboBox?>
 <?import java.lang.*?>
 
+
 <?import javafx.scene.layout.VBox?>
 <VBox stylesheets="/css/viewExpense.css" fx:controller="edu.carleton.expensetracker.controllers.ViewExpenseController"
       xmlns:fx="http://javafx.com/fxml">
 
-    <HBox styleClass="nav" alignment="CENTER">
+    <HBox  styleClass="nav" >
         <Button text="Day" />
         <Button text="Week" />
         <Button text="Month" />
         <Button text="Year" />
     </HBox>
+
     <ComboBox fx:id="changeView" layoutX="15.0" layoutY="33.0" prefWidth="100.0" promptText="List View">
         <items>
             <FXCollections fx:factory="observableArrayList">

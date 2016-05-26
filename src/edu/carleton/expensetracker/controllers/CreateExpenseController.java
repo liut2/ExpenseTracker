@@ -30,6 +30,7 @@ import javafx.stage.Stage;
  * This file serves to control the events on create expense scene.
  */
 public class CreateExpenseController {
+
     private int value;
     private TransactionType type;
     private String note;
