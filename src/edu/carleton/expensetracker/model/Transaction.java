@@ -5,8 +5,7 @@ import java.util.Date;
 
 /**
  * Created by taoliu on 5/23/16.
- * Transaction.java
- * This class is the unit block object.
+ * This class is the core object user creates in order to view their records
  */
 public class Transaction implements java.io.Serializable{
 

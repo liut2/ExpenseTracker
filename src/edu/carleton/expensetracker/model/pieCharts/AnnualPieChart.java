@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * Created by taoliu on 5/24/16.
+ * This pie chart represents the annual summary of expenses.
  */
 public class AnnualPieChart extends PieChart {
     public AnnualPieChart(List<Transaction> transactions) {
@@ -17,6 +18,10 @@ public class AnnualPieChart extends PieChart {
         this.transactions = getAnnualTransactions();
     }
 
+    /**
+     * filter out those transactions happened in current year
+     * @return
+     */
     private List<Transaction> getAnnualTransactions() {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, 0);

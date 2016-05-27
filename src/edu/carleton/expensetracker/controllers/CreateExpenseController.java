@@ -98,14 +98,17 @@ public class CreateExpenseController {
         addExpenseCategories();
         this.category = "Food";
 
-
         Record wrapper = new Record();
         List<Transaction> transactions = wrapper.deserializeRecord();
         for (Transaction tran : transactions) {
             System.out.println(tran.toString());
         }
-
     }
+
+    /**
+     * switch to Expense mode, on click the expense button
+     * @param event
+     */
     @FXML
     public void onClickExpenseButton(ActionEvent event) {
         System.out.println("clicked expense button");
@@ -113,6 +116,11 @@ public class CreateExpenseController {
         addExpenseCategories();
         this.category = "Food";
     }
+
+    /**
+     * switch to Income mode, on click the income button
+     * @param event
+     */
     @FXML
     public void onClickIncomeButton(ActionEvent event) {
         System.out.println("clicked income button");
@@ -121,12 +129,22 @@ public class CreateExpenseController {
         this.category = "Salary";
         System.out.println("reset category to " + this.category);
     }
+
+    /**
+     * update user's chosen date, on click the date picker
+     * @param event
+     */
     @FXML
     public void onClickDatePicker(ActionEvent event) {
         LocalDate chosenDate = datePicker.getValue();
         System.out.println(chosenDate.toString());
         checkIfValidDate(chosenDate);
     }
+
+    /**
+     * update user's chosen category, on click the category combo box
+     * @param event
+     */
     @FXML
     public void onClickCombo(ActionEvent event) {
         if (categoryList.getValue() != null) {
@@ -134,6 +152,11 @@ public class CreateExpenseController {
         }
         System.out.println("category is " + this.category);
     }
+
+    /**
+     * redirect user back to the home scene, on click the back button
+     * @param event
+     */
     @FXML
     public void onClickBack(ActionEvent event) {
         System.out.println("Back to home");
@@ -142,13 +165,15 @@ public class CreateExpenseController {
         Main main = new Main();
         stageTheEventSourceNodeBelongs.setScene(main.viewExpenseScene());
     }
+
+    /**
+     * check if all inputs are valid and then store the user record if so, on click the submit button
+     * @param event
+     */
     @FXML
     public void onClickSubmit(ActionEvent event){
-        //check if every input is valid
-
         //check value input
         String valueInput = valueTextField.getText();
-        System.out.println("the value input is " + valueInput);
         int checkValueRes =  checkIfValidValue(valueInput);
 
         //check date input
@@ -158,32 +183,26 @@ public class CreateExpenseController {
         //check note input
         this.note = noteTextField.getText();
 
-        //check category
-
-        System.out.printf("check value and check date is %d %d %n", checkValueRes, checkDateRes);
+        //if all inputs are valid, then store the record
         if (checkValueRes == 1 && checkDateRes == 2) {
-            //create tran object
+            //create transaction object
             Transaction tran = new Transaction(this.type);
-            //set date
             Instant instant = Instant.from(chosenDate.atStartOfDay(ZoneId.systemDefault()));
             this.chosenDate = Date.from(instant);
             tran.setDate(this.chosenDate);
-            //set value
             tran.setValue(this.value);
-            //set note
             tran.setNote(this.note);
-            //set category
             tran.setCategory(this.category);
-            System.out.println(tran.toString());
-            //add to permenant storage
+
+            //add to permanent storage
             Record wrapper = new Record();
             List<Transaction> transactions = wrapper.deserializeRecord();
-            System.out.println(transactions.size());
             transactions.add(tran);
             wrapper.addTransactions(transactions);
             wrapper.serializeRecord();
             System.out.println("success");
-            //redirect to home page
+
+            //redirect to home scene
             Stage stageTheEventSourceNodeBelongs = (Stage) ((Node)event.getSource()).getScene().getWindow();
             Main main = new Main();
             stageTheEventSourceNodeBelongs.setScene(main.viewExpenseScene());
@@ -191,6 +210,12 @@ public class CreateExpenseController {
             System.out.println("failed");
         }
     }
+
+    /**
+     * return true if the value is an integer
+     * @param valueInput
+     * @return
+     */
     public int checkIfValidValue(String valueInput){
         if (valueInput == null || valueInput.equals("") || !isInteger(valueInput)) {
             valueString.set("Please enter a valid integer");
@@ -203,6 +228,12 @@ public class CreateExpenseController {
             return 1;
         }
     }
+
+    /**
+     * a helper function to determine if the input value is integer
+     * @param str
+     * @return
+     */
     public boolean isInteger(String str) {
         for (int i = 0; i < str.length(); i++) {
             char cur = str.charAt(i);
@@ -212,31 +243,36 @@ public class CreateExpenseController {
         }
         return true;
     }
+
+    /**
+     * return true if user selected a valid date
+     * @param chosenDate
+     * @return
+     */
     public int checkIfValidDate(LocalDate chosenDate) {
         Date now = new Date();
         LocalDate today = now.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        //System.out.println(today.toString());
         if (chosenDate == null) {
             dateString.set("Please choose a date. It cannot be empty");
             dateLabel.setTextFill(Color.RED);
             return 0;
         }
         else if (today.isBefore(chosenDate)) {
-            //System.out.println("wrong date!");
             dateString.set("Please choose a date no later than today");
             dateLabel.setTextFill(Color.RED);
             return 1;
         } else {
-            //System.out.println("correct date!");
             dateString.set("Please choose a date when transaction happened");
             dateLabel.setTextFill(Color.BLACK);
             Instant instant = Instant.from(chosenDate.atStartOfDay(ZoneId.systemDefault()));
             this.chosenDate = Date.from(instant);
-            //System.out.println("the chosen date is " + this.chosenDate);
             return 2;
         }
     }
 
+    /**
+     * dynamically add the combox box items in expense mode
+     */
     public void addExpenseCategories(){
         categoryList.getItems().clear();
         categoryList.setPromptText("Food");
@@ -245,6 +281,9 @@ public class CreateExpenseController {
         }
     }
 
+    /**
+     * dynamically add the combox box items in income mode
+     */
     public void addIncomeCategories(){
         categoryList.getItems().clear();
         categoryList.setPromptText("Salary");
@@ -252,21 +291,4 @@ public class CreateExpenseController {
             categoryList.getItems().add(category);
         }
     }
-
-    public void addRecord(Transaction tran){
-        try
-        {
-            FileOutputStream fileOut =
-                    new FileOutputStream("/transaction.ser");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(tran);
-            out.close();
-            fileOut.close();
-            System.out.println("Serialized data is saved in transaction.ser");
-        }catch(IOException i)
-        {
-            i.printStackTrace();
-        }
-    }
-
 }

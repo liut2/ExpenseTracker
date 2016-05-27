@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * Created by taoliu on 5/24/16.
+ * This pie chart represents monthly summary of user's expenses.
  */
 public class MonthlyPieChart extends PieChart{
     public MonthlyPieChart(List<Transaction> transactions) {
@@ -17,6 +18,10 @@ public class MonthlyPieChart extends PieChart{
         this.transactions = getMonthlyTransactions();
     }
 
+    /**
+     * filter out those transactions occurred in current month
+     * @return
+     */
     private List<Transaction> getMonthlyTransactions() {
         Calendar cal = Calendar.getInstance();
 
@@ -24,10 +29,7 @@ public class MonthlyPieChart extends PieChart{
         cal.clear(Calendar.MINUTE);
         cal.clear(Calendar.SECOND);
         cal.clear(Calendar.MILLISECOND);
-
         cal.set(Calendar.DAY_OF_MONTH, 1);
-        //System.out.println("Start of the month:       " + cal.getTime());
-        //System.out.println("... in milliseconds:      " + cal.getTimeInMillis());
 
         List<Transaction> tempList = new ArrayList<Transaction>();
         for (Transaction tran: this.transactions) {

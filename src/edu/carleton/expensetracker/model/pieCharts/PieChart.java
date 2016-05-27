@@ -13,18 +13,19 @@ import java.util.List;
 
 /**
  * Created by taoliu on 5/24/16.
+ * This pie chart serves as the base class for pie chart object
  */
 public class PieChart {
     protected List<Transaction> transactions;
-    //private String[] expenseCategories;
-    //private String[] incomeCategories;
 
     public PieChart(List<Transaction> transactions){
         this.transactions = transactions;
-        //expenseCategories = new String[]{"Clothes", "Food", "Entertainment", "Gas", "Gifts", "Holidays", "Kids", "Shopping", "Sports", "Transportation"};
-        //incomeCategories = new String[]{"Salary", "Bonus", "Stock", "Lottery"};
     }
 
+    /**
+     * filter out those transactions in expense mode
+     * @return
+     */
     public List<Transaction> getExpenseTransactions(){
         List<Transaction> expenseTransactions = new ArrayList<Transaction>();
         for (Transaction tran : this.transactions){
@@ -35,6 +36,10 @@ public class PieChart {
         return expenseTransactions;
     }
 
+    /**
+     * filter out those transactions in income mode
+     * @return
+     */
     public List<Transaction> getIncomeTransactions(){
         List<Transaction> incomeTransactions = new ArrayList<Transaction>();
         for (Transaction tran : this.transactions){
@@ -45,8 +50,9 @@ public class PieChart {
         return incomeTransactions;
     }
 
-    /*
-    * The piechart view will call on this API method to construct the expense view
+    /**
+     * the controller will call this method to render the pie chart for expense mode
+     * @return
      */
     public List<PieChartComponent> getExpenseComponents(){
         List<PieChartComponent> pieChartComponents = new ArrayList<PieChartComponent>();
@@ -69,8 +75,9 @@ public class PieChart {
         return pieChartComponents;
     }
 
-    /*
-    * The piechart view will call on this API method to construct the income view
+    /**
+     * the controller will call this method to render the pie chart for income mode
+     * @return
      */
     public List<PieChartComponent> getIncomeComponents(){
         List<PieChartComponent> pieChartComponents = new ArrayList<PieChartComponent>();

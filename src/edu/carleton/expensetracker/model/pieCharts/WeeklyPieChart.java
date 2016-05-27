@@ -10,14 +10,17 @@ import java.util.List;
 
 /**
  * Created by taoliu on 5/24/16.
+ * This pie chart represents the weekly summary of user's expenses
  */
 public class WeeklyPieChart extends PieChart {
     public WeeklyPieChart(List<Transaction> transactions) {
         super(transactions);
         this.transactions = getWeeklyTransactions();
     }
-    /*
-    filter the list only to get transactions happened this week
+
+    /**
+     * filter out those transactions occurred in current week
+     * @return
      */
     public List<Transaction> getWeeklyTransactions() {
         Calendar cal = Calendar.getInstance();
@@ -26,11 +29,7 @@ public class WeeklyPieChart extends PieChart {
         cal.clear(Calendar.MINUTE);
         cal.clear(Calendar.SECOND);
         cal.clear(Calendar.MILLISECOND);
-
         cal.set(Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek());
-
-        //System.out.println("Start of this week:       " + cal.getTime());
-        //System.out.println("... in milliseconds:      " + cal.getTimeInMillis());
 
         List<Transaction> tempList = new ArrayList<Transaction>();
         for (Transaction tran: this.transactions) {

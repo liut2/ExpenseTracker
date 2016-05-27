@@ -2,6 +2,7 @@ package edu.carleton.expensetracker.model.pieCharts;
 
 /**
  * Created by taoliu on 5/24/16.
+ * This class is the component that builds up the pie chart
  */
 public class PieChartComponent {
     private String category;

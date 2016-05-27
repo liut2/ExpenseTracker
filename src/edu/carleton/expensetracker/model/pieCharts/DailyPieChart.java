@@ -13,6 +13,7 @@ import static sun.misc.Version.println;
 
 /**
  * Created by taoliu on 5/24/16.
+ * This pie chart represents user's daily summary of expenses.
  */
 public class DailyPieChart extends PieChart {
     public DailyPieChart(List<Transaction> transactions) {
@@ -20,15 +21,16 @@ public class DailyPieChart extends PieChart {
         this.transactions = getDailyTransactions();
     }
 
+    /**
+     * filter out those transactions occurred today
+     * @return
+     */
     public List<Transaction> getDailyTransactions() {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, 0);
         cal.clear(Calendar.MINUTE);
         cal.clear(Calendar.SECOND);
         cal.clear(Calendar.MILLISECOND);
-
-//        System.out.println("Start of the day:       " + cal.getTime());
-//        System.out.println("... in milliseconds:      " + cal.getTimeInMillis());
 
         List<Transaction> tempList = new ArrayList<Transaction>();
         for (Transaction tran: this.transactions) {
@@ -39,8 +41,6 @@ public class DailyPieChart extends PieChart {
         }
         return tempList;
     }
-
-
 
     public static void main(String[] args) {
         DailyPieChart day = new DailyPieChart(Test.test());
