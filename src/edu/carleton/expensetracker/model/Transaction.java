@@ -62,11 +62,12 @@ public class Transaction{
     public Transaction(TransactionType type){
         this.type = type;
     }
-    public Transaction(TransactionType type, Date date, String category, String note){
+    public Transaction(TransactionType type, Date date, String category, String note, int value){
         this.type = type;
         this.category = category;
         this.note = note;
         this.date = date;
+        this.value = value;
     }
 }
 

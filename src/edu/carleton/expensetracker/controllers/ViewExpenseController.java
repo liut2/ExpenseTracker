@@ -156,7 +156,6 @@ public class ViewExpenseController {
     @FXML
     public void onClickCombo(ActionEvent event){
         String value = changeView.getValue();
-        System.out.println(value);
         if(value.compareTo("List View") == 0){
             listViewInit();
         }else if(value.compareTo("Pie Chart")==0){
@@ -187,9 +186,9 @@ public class ViewExpenseController {
             e.printStackTrace();
         }
         for(int i = 0; i<5;i++){
-            transactions.add(new Transaction(TransactionType.EXPENSE, date5,"food","newone"));
-            transactions.add(new Transaction(TransactionType.EXPENSE, date1,"food","newone"));
-            transactions.add(new Transaction(TransactionType.EXPENSE, date3,"food","newone"));
+            transactions.add(new Transaction(TransactionType.EXPENSE, date5,"food","newone",5));
+            transactions.add(new Transaction(TransactionType.EXPENSE, date1,"food","newone",10));
+            transactions.add(new Transaction(TransactionType.EXPENSE, date3,"food","newone",20));
         }
     }
 
