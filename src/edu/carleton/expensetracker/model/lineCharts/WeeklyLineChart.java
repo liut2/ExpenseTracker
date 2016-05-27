@@ -53,8 +53,5 @@ public class WeeklyLineChart extends LineChart {
         tempList.add(incomeList);
         return tempList;
     }
-    public static void main(String[] args) {
-        WeeklyLineChart day = new WeeklyLineChart(LineChartTest.test());
-        System.out.println(day.getDailyTransaction().size());
-    }
+
 }

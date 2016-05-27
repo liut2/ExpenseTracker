@@ -53,8 +53,5 @@ public class MonthlyLineChart extends LineChart{
         tempList.add(incomeList);
         return tempList;
     }
-    public static void main(String[] args) {
-        MonthlyLineChart day = new MonthlyLineChart(LineChartTest.test());
-        System.out.println(day.getWeeklyTransaction().size());
-    }
+
 }

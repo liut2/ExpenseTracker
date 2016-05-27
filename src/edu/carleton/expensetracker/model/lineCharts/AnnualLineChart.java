@@ -53,7 +53,4 @@ public class AnnualLineChart extends LineChart{
         tempList.add(incomeList);
         return tempList;
     }
-    public static void main(String[] args) {
-        AnnualLineChart day = new AnnualLineChart(LineChartTest.test());
-    }
 }

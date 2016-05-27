@@ -16,6 +16,14 @@ public class Transaction implements java.io.Serializable{
     private Date date;
     private String note;
 
+    public Transaction(TransactionType type, Date date,String category, String note,int value) {
+        this.type = type;
+        this.value = value;
+        this.category = category;
+        this.date = date;
+        this.note = note;
+    }
+
     public TransactionType getType() {
         return type;
     }

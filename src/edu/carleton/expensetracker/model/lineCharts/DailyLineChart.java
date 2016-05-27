@@ -52,7 +52,7 @@ public class DailyLineChart extends LineChart{
         return tempList;
     }
     public static void main(String[] args) {
-        DailyLineChart day = new DailyLineChart(LineChartTest.test());
+        DailyLineChart day = new DailyLineChart((List<Transaction>) LineChartTest.test());
         System.out.println(day.getHourlyTransaction().size());
     }
 
