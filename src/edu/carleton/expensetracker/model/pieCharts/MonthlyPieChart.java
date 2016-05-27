@@ -2,15 +2,13 @@ package edu.carleton.expensetracker.model.pieCharts;
 
 import edu.carleton.expensetracker.model.Test;
 import edu.carleton.expensetracker.model.Transaction;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 /**
- * Created by taoliu on 5/24/16.
- * This pie chart represents monthly summary of user's expenses.
+ * This daily pie chart class represents daily summary of user's expenses.
  */
 public class MonthlyPieChart extends PieChart{
     public MonthlyPieChart(List<Transaction> transactions) {
@@ -19,8 +17,8 @@ public class MonthlyPieChart extends PieChart{
     }
 
     /**
-     * filter out those transactions occurred in current month
-     * @return
+     * Get a list of transactions for the current month
+     * @return tempList a list of transactions for the current month
      */
     private List<Transaction> getMonthlyTransactions() {
         Calendar cal = Calendar.getInstance();

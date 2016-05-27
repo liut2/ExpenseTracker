@@ -11,7 +11,6 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by chenx2 on 5/25/2016.
  * This class handles the display of Daily Line Chart.
  */
 public class DailyLineChart extends LineChart{
@@ -22,10 +21,10 @@ public class DailyLineChart extends LineChart{
         this.incomeTransactionPerUnit = getHourlyTransaction().get(1);
     }
 
-/**
- *    takes a list of transactions
- *    return a list of integers each represents the total expense or income within an hour
- */
+    /**
+     *  Get a list of integers each represents the total expense or income within an hour
+     *  @return tempList
+     */
     public List<int[]> getHourlyTransaction() {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, 0);

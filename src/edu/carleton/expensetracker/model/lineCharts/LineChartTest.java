@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by chenx2 on 5/25/2016.
+ * This class handles the testing of lineChart
  */
 public class LineChartTest {
     public static Record test(){

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by chenx2 on 5/25/2016.
+ * This class stores a list of transactions
  */
 
 public class Record implements java.io.Serializable{
@@ -16,10 +16,17 @@ public class Record implements java.io.Serializable{
         this.transactions = new ArrayList<Transaction>();
     }
 
+    /**
+     *  Add a transaction to the record object
+     *  @param transactions
+     */
     public void addTransactions(List<Transaction> transactions){
         this.transactions = transactions;
     }
 
+    /**
+     *  Serialize the record object
+     */
     public void serializeRecord(){
         try
         {
@@ -36,6 +43,9 @@ public class Record implements java.io.Serializable{
         }
     }
 
+    /**
+     *  Deserialize the record object
+     */
     public List<Transaction> deserializeRecord(){
         Record e = null;
         try
@@ -64,13 +74,6 @@ public class Record implements java.io.Serializable{
         Record wrapper = new Record();
         wrapper.addTransactions(Test.test());
         wrapper.serializeRecord();
-
-        /*
-        List<Transaction> transactions = wrapper.deserializeRecord();
-        for (Transaction tran : transactions) {
-            System.out.println(tran.toString());
-        }
-        */
     }
 
 }

@@ -9,7 +9,6 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by chenx2 on 5/25/2016.
  * This class handles the display of WeeklyListView. It takes a list of transactions and return a list of transactions within a week
  */
 public class WeeklyListView extends ListView{
@@ -19,7 +18,8 @@ public class WeeklyListView extends ListView{
     }
 
     /*
-    filter the list only to get transactions happened this week
+     * This function filter the list only to get transactions happened this week
+     * @return tempList
      */
     public List<Transaction> getWeeklyTransactions() {
         Calendar cal = Calendar.getInstance();
@@ -28,7 +28,6 @@ public class WeeklyListView extends ListView{
         cal.clear(Calendar.MINUTE);
         cal.clear(Calendar.SECOND);
         cal.clear(Calendar.MILLISECOND);
-
         cal.set(Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek());
 
 

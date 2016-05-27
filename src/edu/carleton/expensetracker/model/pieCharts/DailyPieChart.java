@@ -12,8 +12,7 @@ import static sun.misc.Version.print;
 import static sun.misc.Version.println;
 
 /**
- * Created by taoliu on 5/24/16.
- * This pie chart represents user's daily summary of expenses.
+ * This daily pie chart class represents daily summary of user's expenses.
  */
 public class DailyPieChart extends PieChart {
     public DailyPieChart(List<Transaction> transactions) {
@@ -22,8 +21,8 @@ public class DailyPieChart extends PieChart {
     }
 
     /**
-     * filter out those transactions occurred today
-     * @return
+     * Get a list of transactions for the current day
+     * @return tempList a list of transactions for the current day
      */
     public List<Transaction> getDailyTransactions() {
         Calendar cal = Calendar.getInstance();

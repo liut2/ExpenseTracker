@@ -10,7 +10,6 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by chenx2 on 5/25/2016.
  * This class handles the display of Annual Line Chart.
  */
 public class AnnualLineChart extends LineChart{
@@ -20,10 +19,11 @@ public class AnnualLineChart extends LineChart{
         this.expenseTransactionPerUnit = listOfTransaction.get(0);
         this.incomeTransactionPerUnit = listOfTransaction.get(1);
     }
-/**
-*    takes a list of transactions
-*    return a list of integers each represents the total expense or income within a month
- */
+
+    /**
+     *  Get a list of integers each represents the total expense or income within a month
+     *  @return tempList
+     */
     public List<int[]> getMonthlyTransaction() {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, 0);

@@ -9,7 +9,6 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by chenx2 on 5/25/2016.
  * This class handles the display of AnnualListView. It takes a list of transactions and return a list of transactions within a year
  */
 public class AnnualListView extends ListView{
@@ -18,8 +17,10 @@ public class AnnualListView extends ListView{
         super(transactions);
         this.transactions = getAnnualTransactions();
     }
+
     /*
-    filter the list only to get transactions happened this year
+     * This function filter the list only to get transactions happened this year
+     * @return tempList
      */
     public List<Transaction> getAnnualTransactions() {
         Calendar cal = Calendar.getInstance();
@@ -27,7 +28,6 @@ public class AnnualListView extends ListView{
         cal.clear(Calendar.MINUTE);
         cal.clear(Calendar.SECOND);
         cal.clear(Calendar.MILLISECOND);
-
         cal.set(Calendar.YEAR, 2016);
         cal.set(Calendar.DAY_OF_YEAR, 1);
 

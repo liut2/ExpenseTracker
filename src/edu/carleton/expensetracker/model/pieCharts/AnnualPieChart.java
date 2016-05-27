@@ -9,8 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by taoliu on 5/24/16.
- * This pie chart represents the annual summary of expenses.
+ * This annual pie chart class represents annual summary of user's expenses.
  */
 public class AnnualPieChart extends PieChart {
     public AnnualPieChart(List<Transaction> transactions) {
@@ -19,8 +18,8 @@ public class AnnualPieChart extends PieChart {
     }
 
     /**
-     * filter out those transactions happened in current year
-     * @return
+     * Get a list of transactions for the current year
+     * @return tempList a list of transactions for the current year
      */
     private List<Transaction> getAnnualTransactions() {
         Calendar cal = Calendar.getInstance();

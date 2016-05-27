@@ -9,8 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by taoliu on 5/24/16.
- * This pie chart represents the weekly summary of user's expenses
+ * This weekly pie chart class represents weekly summary of user's expenses.
  */
 public class WeeklyPieChart extends PieChart {
     public WeeklyPieChart(List<Transaction> transactions) {
@@ -19,8 +18,8 @@ public class WeeklyPieChart extends PieChart {
     }
 
     /**
-     * filter out those transactions occurred in current week
-     * @return
+     * Get a list of transactions for the current week
+     * @return tempList a list of transactions for the current week
      */
     public List<Transaction> getWeeklyTransactions() {
         Calendar cal = Calendar.getInstance();

@@ -10,7 +10,6 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by chenx2 on 5/25/2016.
  * This class handles the display of Monthly Line Chart.
  */
 
@@ -21,19 +20,20 @@ public class MonthlyLineChart extends LineChart{
         this.incomeTransactionPerUnit = getWeeklyTransaction().get(1);
     }
 
-/**
- *    takes a list of transactions
- *    return a list of integers each represents the total expense or income within a day
- */
+    /**
+     *  Get a list of integers each represents the total expense or income within a month
+     *  @return tempList
+     */
     public List<int[]> getWeeklyTransaction() {
         Calendar cal = Calendar.getInstance();
+
         cal.set(Calendar.HOUR_OF_DAY, 0);
         cal.clear(Calendar.MINUTE);
         cal.clear(Calendar.SECOND);
         cal.clear(Calendar.MILLISECOND);
-
         cal.set(Calendar.DAY_OF_MONTH, 1);
         int firstDay = cal.getTime().getDate();
+
         int[] expenseList = new int[cal.getActualMaximum(Calendar.DAY_OF_MONTH)];
         int[] incomeList = new int[cal.getActualMaximum(Calendar.DAY_OF_MONTH)];
         List<int[]> tempList = new ArrayList<int[]>();

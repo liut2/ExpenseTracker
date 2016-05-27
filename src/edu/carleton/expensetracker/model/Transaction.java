@@ -4,7 +4,6 @@ import java.io.*;
 import java.util.Date;
 
 /**
- * Created by taoliu on 5/23/16.
  * This class is the core object user creates in order to view their records
  */
 public class Transaction implements java.io.Serializable{

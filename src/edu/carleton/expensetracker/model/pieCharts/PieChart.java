@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by taoliu on 5/24/16.
  * This pie chart serves as the base class for pie chart object
  */
 public class PieChart {
@@ -24,7 +23,7 @@ public class PieChart {
 
     /**
      * filter out those transactions in expense mode
-     * @return
+     * @return expenseTransactions
      */
     public List<Transaction> getExpenseTransactions(){
         List<Transaction> expenseTransactions = new ArrayList<Transaction>();
@@ -38,7 +37,7 @@ public class PieChart {
 
     /**
      * filter out those transactions in income mode
-     * @return
+     * @return incomeTransactions
      */
     public List<Transaction> getIncomeTransactions(){
         List<Transaction> incomeTransactions = new ArrayList<Transaction>();
@@ -52,7 +51,7 @@ public class PieChart {
 
     /**
      * the controller will call this method to render the pie chart for expense mode
-     * @return
+     * @return pieChartComponents
      */
     public List<PieChartComponent> getExpenseComponents(){
         List<PieChartComponent> pieChartComponents = new ArrayList<PieChartComponent>();
@@ -77,7 +76,7 @@ public class PieChart {
 
     /**
      * the controller will call this method to render the pie chart for income mode
-     * @return
+     * @return pieChartComponents
      */
     public List<PieChartComponent> getIncomeComponents(){
         List<PieChartComponent> pieChartComponents = new ArrayList<PieChartComponent>();

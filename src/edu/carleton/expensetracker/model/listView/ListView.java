@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by chenx2 on 5/25/2016.
  * This class handles the display of listView
  */
 public class ListView {
@@ -20,7 +19,8 @@ public class ListView {
     }
 
     /*
-    filter the list only to get expense transactions
+     * This function filter the list only to get expense transactions
+     * @return expenseTransactions
      */
     public List<Transaction> getExpenseTransactions(){
         List<Transaction> expenseTransactions = new ArrayList<Transaction>();
@@ -33,7 +33,8 @@ public class ListView {
     }
 
     /*
-    filter the list only to get income transactions
+     * This function filter the list only to get income transactions
+     * @return incomeTransactions
      */
     public List<Transaction> getIncomeTransactions(){
         List<Transaction> incomeTransactions = new ArrayList<Transaction>();
