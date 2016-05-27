@@ -1,12 +1,14 @@
 package edu.carleton.expensetracker.controllers;
 
 import edu.carleton.expensetracker.Main;
+import edu.carleton.expensetracker.model.Record;
 import edu.carleton.expensetracker.model.Transaction;
 import java.io.*;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import edu.carleton.expensetracker.model.TransactionType;
@@ -95,6 +97,14 @@ public class CreateExpenseController {
         this.incomeCategories = new String[]{"Salary", "Bonus", "Stock", "Lottery"};
         addExpenseCategories();
         this.category = "Food";
+
+
+        Record wrapper = new Record();
+        List<Transaction> transactions = wrapper.deserializeRecord();
+        for (Transaction tran : transactions) {
+            System.out.println(tran.toString());
+        }
+
     }
     @FXML
     public void onClickExpenseButton(ActionEvent event) {
@@ -165,6 +175,13 @@ public class CreateExpenseController {
             //set category
             tran.setCategory(this.category);
             System.out.println(tran.toString());
+            //add to permenant storage
+            Record wrapper = new Record();
+            List<Transaction> transactions = wrapper.deserializeRecord();
+            System.out.println(transactions.size());
+            transactions.add(tran);
+            wrapper.addTransactions(transactions);
+            wrapper.serializeRecord();
             System.out.println("success");
             //redirect to home page
             Stage stageTheEventSourceNodeBelongs = (Stage) ((Node)event.getSource()).getScene().getWindow();

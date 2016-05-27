@@ -1,10 +1,10 @@
 package edu.carleton.expensetracker.model;
 
 /**
-* Created by chenx2 on 5/24/2016.
-* This enum defines two type of transactions and their display names
-*/
-public enum TransactionType {
+ * Created by chenx2 on 5/24/2016.
+ */
+
+public enum TransactionType implements java.io.Serializable{
     INCOME("income"),
     EXPENSE("expense");
 

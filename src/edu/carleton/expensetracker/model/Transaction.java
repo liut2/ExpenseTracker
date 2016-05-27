@@ -6,9 +6,9 @@ import java.util.Date;
 /**
  * Created by taoliu on 5/23/16.
  * Transaction.java
- * This class contains the transaction model.
+ * This class is the unit block object.
  */
-public class Transaction{
+public class Transaction implements java.io.Serializable{
 
     private TransactionType type;
     private int value;
@@ -62,15 +62,8 @@ public class Transaction{
     public Transaction(TransactionType type){
         this.type = type;
     }
-    public Transaction(TransactionType type, Date date, String category, String note, int value){
-        this.type = type;
-        this.category = category;
-        this.note = note;
-        this.date = date;
-        this.value = value;
-    }
-}
 
+}
 
 
 
