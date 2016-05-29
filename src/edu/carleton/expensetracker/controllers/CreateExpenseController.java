@@ -67,8 +67,8 @@ public class CreateExpenseController {
     @FXML
     private ToggleGroup transactionType;
     @FXML
-    public void initialize(){
 
+    public void initialize(){
         //init vbox position
         vbox.setPadding(new Insets(50, 50, 50, 50));
         //init toggle button
@@ -214,7 +214,7 @@ public class CreateExpenseController {
     /**
      * return true if the value is an integer
      * @param valueInput
-     * @return
+     * @return int
      */
     public int checkIfValidValue(String valueInput){
         if (valueInput == null || valueInput.equals("") || !isInteger(valueInput)) {
@@ -232,7 +232,7 @@ public class CreateExpenseController {
     /**
      * a helper function to determine if the input value is integer
      * @param str
-     * @return
+     * @return boolean
      */
     public boolean isInteger(String str) {
         for (int i = 0; i < str.length(); i++) {
@@ -247,7 +247,7 @@ public class CreateExpenseController {
     /**
      * return true if user selected a valid date
      * @param chosenDate
-     * @return
+     * @return boolean
      */
     public int checkIfValidDate(LocalDate chosenDate) {
         Date now = new Date();

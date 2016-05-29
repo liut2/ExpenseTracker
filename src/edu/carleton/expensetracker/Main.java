@@ -21,7 +21,7 @@ public class Main extends Application {
     }
 
     /*
-    This function handles the create expense scene.
+     * This function handles the create expense scene.
      */
     public Scene createExpenseScene(){
         Parent root = null;
@@ -34,7 +34,7 @@ public class Main extends Application {
     }
 
     /*
-    This function handles the view expense scene.
+     * This function handles the view expense scene.
      */
     public Scene viewExpenseScene(){
         Parent root = null;

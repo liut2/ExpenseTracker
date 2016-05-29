@@ -1,0 +1,12 @@
+.root {
+ -fx-focus-color: transparent;
+  -fx-faint-focus-color: transparent;
+
+  }
+
+.top-nav,.createRecord{
+    -fx-padding: 30,0,0,0;
+}
+.viewBox{
+    -fx-padding:0,0,20,0;
+}
