@@ -14,7 +14,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        test();
+        //test();
         primaryStage.setTitle("Personal Expense Tracker");
         //Scene createScene = createExpenseScene();
         Scene viewScene = viewExpenseScene();

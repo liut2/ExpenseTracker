@@ -48,25 +48,26 @@ public class Record implements java.io.Serializable{
      */
     public List<Transaction> deserializeRecord(){
         Record e = null;
-        try
-        {
-            FileInputStream fileIn = new FileInputStream("./resources/data/record.ser");
-            ObjectInputStream in = new ObjectInputStream(fileIn);
-            e = (Record) in.readObject();
-            System.out.println(e.transactions.size());
-            in.close();
-            fileIn.close();
-            return e == null? new ArrayList<Transaction>(): e.transactions;
+        if(! new File("./resources/data/record.ser").isFile()){
+            return new ArrayList<Transaction>();
+        }else {
+            try {
+                FileInputStream fileIn = new FileInputStream("./resources/data/record.ser");
+                ObjectInputStream in = new ObjectInputStream(fileIn);
+                e = (Record) in.readObject();
+                System.out.println(e.transactions.size());
+                in.close();
+                fileIn.close();
+                return e == null ? new ArrayList<Transaction>() : e.transactions;
 
-        }catch(IOException i)
-        {
-            i.printStackTrace();
-            return null;
-        }catch(ClassNotFoundException c)
-        {
-            System.out.println("Record class not found");
-            c.printStackTrace();
-            return null;
+            } catch (IOException i) {
+                i.printStackTrace();
+                return new ArrayList<Transaction>();
+            } catch (ClassNotFoundException c) {
+                System.out.println("Record class not found");
+                c.printStackTrace();
+                return new ArrayList<Transaction>();
+            }
         }
     }
 
