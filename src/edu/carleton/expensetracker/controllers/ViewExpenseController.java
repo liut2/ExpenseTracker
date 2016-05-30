@@ -176,7 +176,7 @@ public class ViewExpenseController {
 
     private void showWeeklyPieChart(){
         expenseChart.setTitle("Weekly Expense");
-        incomeChart.setTitle("Daily Income");
+        incomeChart.setTitle("Weekly Income");
         WeeklyPieChart temp = new WeeklyPieChart(transactions);
         List<PieChartComponent> tempdata= temp.getExpenseComponents();
         for (PieChartComponent aTempdata : tempdata) {
@@ -190,7 +190,7 @@ public class ViewExpenseController {
 
     private void showMonthlyPieChart(){
         expenseChart.setTitle("Monthly Expense");
-        incomeChart.setTitle("Daily Income");
+        incomeChart.setTitle("Monthly Income");
         MonthlyPieChart temp = new MonthlyPieChart(transactions);
         List<PieChartComponent> tempdata= temp.getExpenseComponents();
         for (PieChartComponent aTempdata : tempdata) {
@@ -203,7 +203,7 @@ public class ViewExpenseController {
     }
     private void showAnnuallyPieChart(){
         expenseChart.setTitle("Annually Expense");
-        incomeChart.setTitle("Daily Income");
+        incomeChart.setTitle("Annually Income");
         AnnualPieChart temp = new AnnualPieChart(transactions);
         List<PieChartComponent> tempdata= temp.getExpenseComponents();
         for (PieChartComponent aTempdata : tempdata) {
