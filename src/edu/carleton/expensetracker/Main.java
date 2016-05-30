@@ -1,5 +1,7 @@
 package edu.carleton.expensetracker;
 
+import edu.carleton.expensetracker.model.Record;
+import edu.carleton.expensetracker.model.Test;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,6 +14,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        test();
         primaryStage.setTitle("Personal Expense Tracker");
         //Scene createScene = createExpenseScene();
         Scene viewScene = viewExpenseScene();
@@ -45,7 +48,11 @@ public class Main extends Application {
         }
         return new Scene(root, 900, 600);
     }
-
+    public void test(){
+        Record test = new Record();
+        test.addTransactions(Test.test());
+        test.serializeRecord();
+    }
     public static void main(String[] args) {
         launch(args);
     }

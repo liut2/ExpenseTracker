@@ -141,7 +141,6 @@ public class ViewExpenseController {
             container.getChildren().remove(lineChart);
         }
         displayView = "pieChart";
-
         expenseChart = new PieChart(expensePieChartData);
         incomeChart = new PieChart(incomePieChartData);
         incomePieChartData.clear();
@@ -156,10 +155,10 @@ public class ViewExpenseController {
             showAnnuallyPieChart();
         }
         hContainer = new HBox();
-        hContainer.getChildren().addAll(incomeChart,expenseChart);
+        hContainer.getChildren().addAll(expenseChart,incomeChart);
         container.getChildren().add(1,hContainer);
-
     }
+
     private void showDailyPieChart(){
         expenseChart.setTitle("Daily Expense");
         incomeChart.setTitle("Daily Income");
@@ -215,6 +214,7 @@ public class ViewExpenseController {
             incomePieChartData.add(new PieChart.Data(aTempdata.getCategory(), aTempdata.getValue()));
         }
     }
+
     private void lineChartView(){
         if(displayView.compareTo("listView")==0){
             container.getChildren().remove(table);
@@ -248,7 +248,10 @@ public class ViewExpenseController {
             showAnnualyLineChart();
         }
     }
+
     private void showDailyLineChart(){
+        income.getData().clear();
+        expense.getData().clear();
         xAxis.setLabel("Number of Day");
         lineChart.setTitle("Expense and Income in this week");
         WeeklyLineChart temp = new WeeklyLineChart(transactions);
@@ -261,6 +264,8 @@ public class ViewExpenseController {
         }
     }
     private void showMonthlyLineChart(){
+        income.getData().clear();
+        expense.getData().clear();
         xAxis.setLabel("Number of Day");
         lineChart.setTitle("Expense and Income in this month");
         MonthlyLineChart temp = new MonthlyLineChart(transactions);
@@ -273,6 +278,8 @@ public class ViewExpenseController {
         }
     }
     private void showAnnualyLineChart(){
+        income.getData().clear();
+        expense.getData().clear();
         xAxis.setLabel("Number of Month");
         lineChart.setTitle("Expense and Income in this year");
         AnnualLineChart temp = new AnnualLineChart(transactions);
@@ -312,8 +319,6 @@ public class ViewExpenseController {
             List<Transaction> tempData = temp.getWeeklyTransactions();
             addToData(tempData);
         }else if(displayView.compareTo("lineChart") == 0){
-            income.getData().clear();
-            expense.getData().clear();
             showDailyLineChart();
         }else{
             expensePieChartData.clear();
@@ -331,8 +336,6 @@ public class ViewExpenseController {
             List<Transaction> tempData = temp.getMonthlyTransactions();
             addToData(tempData);
         }else if(displayView.compareTo("lineChart") == 0){
-            income.getData().clear();
-            expense.getData().clear();
             showMonthlyLineChart();
         }else{
             expensePieChartData.clear();
@@ -350,8 +353,6 @@ public class ViewExpenseController {
             List<Transaction> tempData = temp.getAnnualTransactions();
             addToData(tempData);
         }else if(displayView.compareTo("lineChart") == 0){
-            income.getData().clear();
-            expense.getData().clear();
             showAnnualyLineChart();
         }else{
             expensePieChartData.clear();
