@@ -9,7 +9,7 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.control.ToggleButton?>
 
-<VBox fx:id="container" stylesheets="/css/viewExpense.css" fx:controller="edu.carleton.expensetracker.controllers.ViewExpenseController"
+<VBox fx:id="container" stylesheets="/css/viewExpense.css" fx:controller="edu.carleton.expensetracker.controllers.ViewController"
       xmlns:fx="http://javafx.com/fxml">
 
     <fx:define>

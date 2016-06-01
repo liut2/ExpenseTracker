@@ -28,15 +28,16 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by taoliu on 5/23/16.
- * ViewExpenseController.java
+ * ViewController.java
  * This file serves to control the events on view expense scene.
  */
-public class ViewExpenseController {
+public class ViewController {
     @FXML
     private ComboBox<String> changeView;
     @FXML
@@ -61,8 +62,6 @@ public class ViewExpenseController {
     private String timeRange = "day";
     private String displayView = "listView";
     private List<Transaction> transactions = new ArrayList<Transaction>();
-    private boolean listViewInitialized = false;
-    private boolean lineChartInitialized = false;
     private NumberAxis xAxis;
     private NumberAxis yAxis;
     private XYChart.Series expense;
@@ -72,12 +71,18 @@ public class ViewExpenseController {
     private PieChart expenseChart;
     private PieChart incomeChart;
     public HBox hContainer;
+    private boolean initialized = false;
 
     public void initialize(){
         Record wrapper = new Record();
         transactions = wrapper.deserializeRecord();
         day.setSelected(true);
-        listViewInit();
+        if(!initialized){
+            listViewInit();
+            lineChartViewInit();
+            PieChartViewInit();
+            initialized = true;
+        }
         listView();
     }
 
@@ -99,7 +104,30 @@ public class ViewExpenseController {
         category = new TableColumn("category");
         category.setCellValueFactory(
                 new PropertyValueFactory<Transaction, String>("category"));
+        table.getColumns().addAll(type, value, category, date, note);
+    }
 
+    public void lineChartViewInit(){
+        //defining the axes
+        xAxis = new NumberAxis();
+        yAxis = new NumberAxis();
+        //creating the chart
+        lineChart = new LineChart<Number, Number>(xAxis, yAxis);
+        //defining a series
+        income = new XYChart.Series();
+        income.setName("Income");
+        expense = new XYChart.Series();
+        expense.setName("Expense");
+        //populating the series with data
+        lineChart.getData().add(expense);
+        lineChart.getData().add(income);
+    }
+
+    public void PieChartViewInit(){
+        expenseChart = new PieChart(expensePieChartData);
+        incomeChart = new PieChart(incomePieChartData);
+        hContainer = new HBox();
+        hContainer.getChildren().addAll(expenseChart,incomeChart);
     }
 
     public void listView(){
@@ -111,6 +139,7 @@ public class ViewExpenseController {
             container.getChildren().add(1,table);
         }
         displayView = "listView";
+
         List<Transaction> tempData;
         if(timeRange.compareTo("day") == 0){
             DailyListView temp = new DailyListView(transactions);
@@ -125,12 +154,9 @@ public class ViewExpenseController {
             AnnualListView temp = new AnnualListView(transactions);
             tempData = temp.getAnnualTransactions();
         }
-        addToData(tempData);
+        data.clear();
+        data.addAll(tempData);
         table.setItems(data);
-        if(!listViewInitialized) {
-            table.getColumns().addAll(type, value, category, date, note);
-            listViewInitialized = true;
-        }
     }
 
     private void pieChartView(){
@@ -141,11 +167,9 @@ public class ViewExpenseController {
             container.getChildren().remove(lineChart);
         }
         displayView = "pieChart";
-        expenseChart = new PieChart(expensePieChartData);
-        incomeChart = new PieChart(incomePieChartData);
+
         incomePieChartData.clear();
         expensePieChartData.clear();
-
         if(timeRange.compareTo("day") == 0){
             String datetype = "Daily";
             DailyPieChart dailyPieChart = new DailyPieChart(transactions);
@@ -163,8 +187,6 @@ public class ViewExpenseController {
             AnnualPieChart annualPieChart = new AnnualPieChart(transactions);
             showPieChart(datetype, annualPieChart);
         }
-        hContainer = new HBox();
-        hContainer.getChildren().addAll(expenseChart,incomeChart);
         container.getChildren().add(1,hContainer);
     }
 
@@ -196,22 +218,6 @@ public class ViewExpenseController {
             container.getChildren().remove(hContainer);
         }
         displayView = "lineChart";
-        if(!lineChartInitialized) {
-            //defining the axes
-            xAxis = new NumberAxis();
-            yAxis = new NumberAxis();
-            //creating the chart
-            lineChart = new LineChart<Number, Number>(xAxis, yAxis);
-            //defining a series
-            income = new XYChart.Series();
-            income.setName("Income");
-            expense = new XYChart.Series();
-            expense.setName("Expense");
-            //populating the series with data
-            lineChart.getData().add(expense);
-            lineChart.getData().add(income);
-            lineChartInitialized = true;
-        }
         container.getChildren().add(1,lineChart);
 
         if(timeRange.compareTo("week") == 0 || timeRange.compareTo("day") == 0){
@@ -269,7 +275,8 @@ public class ViewExpenseController {
         if(displayView.compareTo("listView") == 0){
             DailyListView temp = new DailyListView(transactions);
             List<Transaction> tempData = temp.getDailyTransactions();
-            addToData(tempData);
+            data.clear();
+            data.addAll(tempData);
         }else if(displayView.compareTo("lineChart") == 0){
             income.getData().clear();
             expense.getData().clear();
@@ -290,7 +297,8 @@ public class ViewExpenseController {
         if(displayView.compareTo("listView") == 0){
             WeeklyListView temp = new WeeklyListView(transactions);
             List<Transaction> tempData = temp.getWeeklyTransactions();
-            addToData(tempData);
+            data.clear();
+            data.addAll(tempData);
         }else if(displayView.compareTo("lineChart") == 0){
             showDailyLineChart();
         }else{
@@ -309,7 +317,8 @@ public class ViewExpenseController {
         if(displayView.compareTo("listView") == 0){
             MonthlyListView temp = new MonthlyListView(transactions);
             List<Transaction> tempData = temp.getMonthlyTransactions();
-            addToData(tempData);
+            data.clear();
+            data.addAll(tempData);
         }else if(displayView.compareTo("lineChart") == 0){
             showMonthlyLineChart();
         }else{
@@ -328,7 +337,8 @@ public class ViewExpenseController {
         if(displayView.compareTo("listView") == 0){
             AnnualListView temp = new AnnualListView(transactions);
             List<Transaction> tempData = temp.getAnnualTransactions();
-            addToData(tempData);
+            data.clear();
+            data.addAll(tempData);
         }else if(displayView.compareTo("lineChart") == 0){
             showAnnualyLineChart();
         }else{
@@ -359,8 +369,5 @@ public class ViewExpenseController {
         stageTheEventSourceNodeBelongs.setScene(main.createExpenseScene());
     }
 
-    private void addToData(List<Transaction> transactions){
-        data.clear();
-        data.addAll(transactions);
-    }
+
 }

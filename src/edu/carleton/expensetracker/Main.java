@@ -1,6 +1,5 @@
 package edu.carleton.expensetracker;
 
-import edu.carleton.expensetracker.model.Record;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -28,7 +27,7 @@ public class Main extends Application {
     public Scene createExpenseScene(){
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("/fxml/createExpense.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/fxml/create.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -41,7 +40,7 @@ public class Main extends Application {
     public Scene viewExpenseScene(){
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("/fxml/viewExpense.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/fxml/view.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }

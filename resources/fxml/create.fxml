@@ -12,7 +12,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.collections.*?>
 
-<VBox fx:id="vbox" stylesheets="/css/createExpense.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/null" fx:controller="edu.carleton.expensetracker.controllers.CreateExpenseController" spacing="20" >
+<VBox fx:id="vbox" stylesheets="/css/createExpense.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/null" fx:controller="edu.carleton.expensetracker.controllers.CreateController" spacing="20" >
     <fx:define>
         <ToggleGroup fx:id="transactionType" />
     </fx:define>

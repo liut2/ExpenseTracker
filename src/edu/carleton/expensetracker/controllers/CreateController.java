@@ -27,10 +27,10 @@ import javafx.stage.Stage;
 
 /**
  * Created by taoliu on 5/23/16.
- * CreateExpenseController.java
+ * CreateController.java
  * This file serves to control the events on create expense scene.
  */
-public class CreateExpenseController {
+public class CreateController {
 
     private int value;
     private String type;
