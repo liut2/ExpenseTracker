@@ -1,13 +1,8 @@
 package edu.carleton.expensetracker.model.pieCharts;
 
-import edu.carleton.expensetracker.model.Test;
 import edu.carleton.expensetracker.model.Transaction;
-import edu.carleton.expensetracker.model.TransactionType;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -28,7 +23,7 @@ public class PieChart {
     public List<Transaction> getExpenseTransactions(){
         List<Transaction> expenseTransactions = new ArrayList<Transaction>();
         for (Transaction tran : this.transactions){
-            if (tran.getType() == TransactionType.EXPENSE){
+            if (tran.getType().compareTo("expense") == 0){
                 expenseTransactions.add(tran);
             }
         }
@@ -42,7 +37,7 @@ public class PieChart {
     public List<Transaction> getIncomeTransactions(){
         List<Transaction> incomeTransactions = new ArrayList<Transaction>();
         for (Transaction tran : this.transactions){
-            if (tran.getType() == TransactionType.INCOME){
+            if (tran.getType().compareTo("income") == 0){
                 incomeTransactions.add(tran);
             }
         }
@@ -99,8 +94,4 @@ public class PieChart {
         return pieChartComponents;
     }
 
-    public static void main(String[] args) {
-        PieChart newPiechart = new PieChart(Test.test());
-        System.out.println(newPiechart.getExpenseTransactions().size());
-    }
 }

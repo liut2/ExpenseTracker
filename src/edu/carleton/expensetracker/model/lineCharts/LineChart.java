@@ -13,4 +13,11 @@ public class LineChart {
     int[] incomeTransactionPerUnit;
     List<Transaction> transactions;
 
+    public int[] getExpenseTransactions(){
+        return expenseTransactionPerUnit;
+    }
+
+    public int[] getIncomeTransactions(){
+        return incomeTransactionPerUnit;
+    }
 }

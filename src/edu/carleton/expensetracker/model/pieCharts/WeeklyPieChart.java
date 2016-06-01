@@ -1,6 +1,5 @@
 package edu.carleton.expensetracker.model.pieCharts;
 
-import edu.carleton.expensetracker.model.Test;
 import edu.carleton.expensetracker.model.Transaction;
 
 import java.util.ArrayList;
@@ -40,8 +39,5 @@ public class WeeklyPieChart extends PieChart {
         return tempList;
     }
 
-    public static void main(String[] args) {
-        WeeklyPieChart week = new WeeklyPieChart(Test.test());
-        System.out.println(week.getExpenseTransactions().size());
-    }
+
 }

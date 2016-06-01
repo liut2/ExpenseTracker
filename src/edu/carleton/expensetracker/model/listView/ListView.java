@@ -1,8 +1,6 @@
 package edu.carleton.expensetracker.model.listView;
 
-import edu.carleton.expensetracker.model.Record;
 import edu.carleton.expensetracker.model.Transaction;
-import edu.carleton.expensetracker.model.TransactionType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +23,7 @@ public class ListView {
     public List<Transaction> getExpenseTransactions(){
         List<Transaction> expenseTransactions = new ArrayList<Transaction>();
         for (Transaction tran : this.transactions){
-            if (tran.getType() == TransactionType.EXPENSE){
+            if (tran.getType().compareTo("expense") == 0){
                 expenseTransactions.add(tran);
             }
         }
@@ -39,7 +37,7 @@ public class ListView {
     public List<Transaction> getIncomeTransactions(){
         List<Transaction> incomeTransactions = new ArrayList<Transaction>();
         for (Transaction tran : this.transactions){
-            if (tran.getType() == TransactionType.INCOME){
+            if (tran.getType().compareTo("income") == 0){
                 incomeTransactions.add(tran);
             }
         }

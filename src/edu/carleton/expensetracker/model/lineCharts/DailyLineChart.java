@@ -1,8 +1,6 @@
 package edu.carleton.expensetracker.model.lineCharts;
 
-import edu.carleton.expensetracker.model.Record;
 import edu.carleton.expensetracker.model.Transaction;
-import edu.carleton.expensetracker.model.TransactionType;
 
 
 import java.util.ArrayList;
@@ -17,15 +15,14 @@ public class DailyLineChart extends LineChart{
 
     public DailyLineChart(List<Transaction> transactions) {
         this.transactions = transactions;
-        this.expenseTransactionPerUnit = getHourlyTransaction().get(0);
-        this.incomeTransactionPerUnit = getHourlyTransaction().get(1);
+        getHourlyTransaction();
     }
 
     /**
      *  Get a list of integers each represents the total expense or income within an hour
      *  @return tempList
      */
-    public List<int[]> getHourlyTransaction() {
+    public void getHourlyTransaction() {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, 0);
         cal.clear(Calendar.MINUTE);
@@ -39,20 +36,15 @@ public class DailyLineChart extends LineChart{
             Date tempDate = tran.getDate();
             if ((cal.getTime().before(tempDate) || cal.getTime().equals(tempDate))) {
                 offset = tempDate.getHours();
-                if(tran.getType() == TransactionType.EXPENSE) {
+                if(tran.getType().compareTo("expense") == 0) {
                     expenseList[offset] += tran.getValue();
                 }else{
                     incomeList[offset] += tran.getValue();
                 }
             }
         }
-        tempList.add(expenseList);
-        tempList.add(incomeList);
-        return tempList;
-    }
-    public static void main(String[] args) {
-        DailyLineChart day = new DailyLineChart((List<Transaction>) LineChartTest.test());
-        System.out.println(day.getHourlyTransaction().size());
+        expenseTransactionPerUnit = expenseList;
+        incomeTransactionPerUnit = incomeList;
     }
 
 }

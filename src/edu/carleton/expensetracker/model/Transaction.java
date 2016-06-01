@@ -1,6 +1,7 @@
 package edu.carleton.expensetracker.model;
 
 import java.io.*;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -8,26 +9,26 @@ import java.util.Date;
  */
 public class Transaction implements java.io.Serializable{
 
-    private TransactionType type;
     private int value;
     private String category;
     private Date date;
     private String note;
+    private String type;
+    private String displayDate;
 
-    public Transaction(TransactionType type, Date date,String category, String note,int value) {
-        this.type = type;
+    public Transaction(Date date,String category, String note,int value) {
         this.value = value;
         this.category = category;
         this.date = date;
         this.note = note;
+        this.displayDate = new SimpleDateFormat("MM/dd/yyyy").format(date);
     }
 
-    public TransactionType getType() {
-        return type;
-    }
-
-    public void setType(TransactionType type) {
+    public Transaction(String type){
         this.type = type;
+    }
+    public  String getType(){
+        return type;
     }
 
     public int getValue() {
@@ -49,9 +50,12 @@ public class Transaction implements java.io.Serializable{
     public Date getDate() {
         return date;
     }
-
+    public String getDisplayDate(){
+        return displayDate;
+    }
     public void setDate(Date date) {
         this.date = date;
+        this.displayDate = new SimpleDateFormat("MM/dd/yyyy").format(date);
     }
 
     public String getNote() {
@@ -63,10 +67,7 @@ public class Transaction implements java.io.Serializable{
     }
 
     public String toString() {
-        return "Type is " + type + " value is " + value + " category is " + category + " date is " + date + " and note is "+ note;
-    }
-    public Transaction(TransactionType type){
-        this.type = type;
+        return " value is " + value + " category is " + category + " date is " + date + " and note is "+ note;
     }
 
 }

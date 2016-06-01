@@ -71,10 +71,6 @@ public class Record implements java.io.Serializable{
         }
     }
 
-    public static void main(String[] args) {
-        Record wrapper = new Record();
-        wrapper.addTransactions(Test.test());
-        wrapper.serializeRecord();
-    }
+
 
 }

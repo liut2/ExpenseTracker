@@ -1,6 +1,5 @@
 package edu.carleton.expensetracker.model.pieCharts;
 
-import edu.carleton.expensetracker.model.Test;
 import edu.carleton.expensetracker.model.Transaction;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -39,8 +38,4 @@ public class MonthlyPieChart extends PieChart{
         return tempList;
     }
 
-    public static void main(String[] args) {
-        MonthlyPieChart month = new MonthlyPieChart(Test.test());
-        System.out.println(month.getExpenseTransactions().size());
-    }
 }

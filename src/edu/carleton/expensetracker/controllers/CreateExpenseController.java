@@ -1,8 +1,8 @@
 package edu.carleton.expensetracker.controllers;
 
 import edu.carleton.expensetracker.Main;
-import edu.carleton.expensetracker.model.Record;
-import edu.carleton.expensetracker.model.Transaction;
+import edu.carleton.expensetracker.model.*;
+
 import java.io.*;
 import java.time.Instant;
 import java.time.LocalDate;
@@ -11,7 +11,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import edu.carleton.expensetracker.model.TransactionType;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -34,7 +33,7 @@ import javafx.stage.Stage;
 public class CreateExpenseController {
 
     private int value;
-    private TransactionType type;
+    private String type;
     private String note;
     private StringProperty dateString;
     private StringProperty valueString;
@@ -74,7 +73,7 @@ public class CreateExpenseController {
         //init toggle button
         expense.setSelected(true);
         income.setSelected(false);
-        this.type = TransactionType.EXPENSE;
+        this.type = "expense";
 
         //init date label
         dateString = new SimpleStringProperty();
@@ -112,7 +111,7 @@ public class CreateExpenseController {
     @FXML
     public void onClickExpenseButton(ActionEvent event) {
         System.out.println("clicked expense button");
-        this.type = TransactionType.EXPENSE;
+        this.type = "expense";
         addExpenseCategories();
         this.category = "Food";
     }
@@ -124,7 +123,7 @@ public class CreateExpenseController {
     @FXML
     public void onClickIncomeButton(ActionEvent event) {
         System.out.println("clicked income button");
-        this.type = TransactionType.INCOME;
+        this.type = "income";
         addIncomeCategories();
         this.category = "Salary";
         System.out.println("reset category to " + this.category);
@@ -186,7 +185,12 @@ public class CreateExpenseController {
         //if all inputs are valid, then store the record
         if (checkValueRes == 1 && checkDateRes == 2) {
             //create transaction object
-            Transaction tran = new Transaction(this.type);
+            Transaction tran;
+            if(this.type.compareTo("income")==0){
+                tran = new IncomeTransaction();
+            }else{
+                tran = new ExpenseTransaction();
+            }
             Instant instant = Instant.from(chosenDate.atStartOfDay(ZoneId.systemDefault()));
             this.chosenDate = Date.from(instant);
             tran.setDate(this.chosenDate);

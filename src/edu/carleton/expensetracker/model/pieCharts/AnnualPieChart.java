@@ -1,6 +1,5 @@
 package edu.carleton.expensetracker.model.pieCharts;
 
-import edu.carleton.expensetracker.model.Test;
 import edu.carleton.expensetracker.model.Transaction;
 
 import java.util.ArrayList;
@@ -43,8 +42,5 @@ public class AnnualPieChart extends PieChart {
         }
         return tempList;
     }
-    public static void main(String[] args) {
-        AnnualPieChart year = new AnnualPieChart(Test.test());
-        System.out.println(year.getExpenseTransactions().size());
-    }
+
 }

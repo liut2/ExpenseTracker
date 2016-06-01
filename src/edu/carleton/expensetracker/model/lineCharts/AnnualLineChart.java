@@ -1,8 +1,6 @@
 package edu.carleton.expensetracker.model.lineCharts;
 
-import edu.carleton.expensetracker.model.Record;
 import edu.carleton.expensetracker.model.Transaction;
-import edu.carleton.expensetracker.model.TransactionType;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -15,16 +13,14 @@ import java.util.List;
 public class AnnualLineChart extends LineChart{
     public AnnualLineChart(List<Transaction> transactions) {
         this.transactions = transactions;
-        List<int[]> listOfTransaction = getMonthlyTransaction();
-        this.expenseTransactionPerUnit = listOfTransaction.get(0);
-        this.incomeTransactionPerUnit = listOfTransaction.get(1);
+        getMonthlyTransaction();
     }
 
     /**
      *  Get a list of integers each represents the total expense or income within a month
      *  @return tempList
      */
-    public List<int[]> getMonthlyTransaction() {
+    public void getMonthlyTransaction() {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, 0);
         cal.clear(Calendar.MINUTE);
@@ -42,15 +38,15 @@ public class AnnualLineChart extends LineChart{
             Date tempDate = tran.getDate();
             if ((cal.getTime().before(tempDate) || cal.getTime().equals(tempDate))) {
                 offset = tempDate.getMonth();
-                if(tran.getType() == TransactionType.EXPENSE) {
+                if(tran.getType().compareTo("expense") == 0) {
                     expenseList[offset] += tran.getValue();
                 }else{
                     incomeList[offset] += tran.getValue();
                 }
             }
         }
-        tempList.add(expenseList);
-        tempList.add(incomeList);
-        return tempList;
+        expenseTransactionPerUnit = expenseList;
+        incomeTransactionPerUnit = incomeList;
+
     }
 }

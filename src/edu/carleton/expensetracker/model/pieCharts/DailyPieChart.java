@@ -1,6 +1,5 @@
 package edu.carleton.expensetracker.model.pieCharts;
 
-import edu.carleton.expensetracker.model.Test;
 import edu.carleton.expensetracker.model.Transaction;
 
 import java.util.ArrayList;
@@ -9,7 +8,6 @@ import java.util.Date;
 import java.util.List;
 
 import static sun.misc.Version.print;
-import static sun.misc.Version.println;
 
 /**
  * This daily pie chart class represents daily summary of user's expenses.
@@ -41,8 +39,5 @@ public class DailyPieChart extends PieChart {
         return tempList;
     }
 
-    public static void main(String[] args) {
-        DailyPieChart day = new DailyPieChart(Test.test());
-        System.out.println(day.getExpenseTransactions().size());
-    }
+
 }

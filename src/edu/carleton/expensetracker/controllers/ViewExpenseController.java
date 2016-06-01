@@ -95,7 +95,7 @@ public class ViewExpenseController {
                 new PropertyValueFactory<Transaction, String>("value"));
         date = new TableColumn("date");
         date.setCellValueFactory(
-                new PropertyValueFactory<Transaction, String>("date"));
+                new PropertyValueFactory<Transaction, String>("displayDate"));
         category = new TableColumn("category");
         category.setCellValueFactory(
                 new PropertyValueFactory<Transaction, String>("category"));
@@ -188,63 +188,7 @@ public class ViewExpenseController {
             incomePieChartData.add(new PieChart.Data(component.getCategory(), component.getValue()));
         }
     }
-    /*
-    private void showDailyPieChart(){
-        expenseChart.setTitle("Daily Expense");
-        incomeChart.setTitle("Daily Income");
-        DailyPieChart temp = new DailyPieChart(transactions);
-        List<PieChartComponent> tempdata= temp.getExpenseComponents();
-        for (PieChartComponent aTempdata : tempdata) {
-            expensePieChartData.add(new PieChart.Data(aTempdata.getCategory(), aTempdata.getValue()));
-        }
-        tempdata= temp.getIncomeComponents();
-        for (PieChartComponent aTempdata : tempdata) {
-            incomePieChartData.add(new PieChart.Data(aTempdata.getCategory(), aTempdata.getValue()));
-        }
-        System.out.println("finish executing daily");
-    }
 
-    private void showWeeklyPieChart(){
-        expenseChart.setTitle("Weekly Expense");
-        incomeChart.setTitle("Weekly Income");
-        WeeklyPieChart temp = new WeeklyPieChart(transactions);
-        List<PieChartComponent> tempdata= temp.getExpenseComponents();
-        for (PieChartComponent aTempdata : tempdata) {
-            expensePieChartData.add(new PieChart.Data(aTempdata.getCategory(), aTempdata.getValue()));
-        }
-        tempdata= temp.getIncomeComponents();
-        for (PieChartComponent aTempdata : tempdata) {
-            incomePieChartData.add(new PieChart.Data(aTempdata.getCategory(), aTempdata.getValue()));
-        }
-    }
-
-    private void showMonthlyPieChart(){
-        expenseChart.setTitle("Monthly Expense");
-        incomeChart.setTitle("Monthly Income");
-        MonthlyPieChart temp = new MonthlyPieChart(transactions);
-        List<PieChartComponent> tempdata= temp.getExpenseComponents();
-        for (PieChartComponent aTempdata : tempdata) {
-            expensePieChartData.add(new PieChart.Data(aTempdata.getCategory(), aTempdata.getValue()));
-        }
-        tempdata= temp.getIncomeComponents();
-        for (PieChartComponent aTempdata : tempdata) {
-            incomePieChartData.add(new PieChart.Data(aTempdata.getCategory(), aTempdata.getValue()));
-        }
-    }
-    private void showAnnuallyPieChart(){
-        expenseChart.setTitle("Annually Expense");
-        incomeChart.setTitle("Annually Income");
-        AnnualPieChart temp = new AnnualPieChart(transactions);
-        List<PieChartComponent> tempdata= temp.getExpenseComponents();
-        for (PieChartComponent aTempdata : tempdata) {
-            expensePieChartData.add(new PieChart.Data(aTempdata.getCategory(), aTempdata.getValue()));
-        }
-        tempdata= temp.getIncomeComponents();
-        for (PieChartComponent aTempdata : tempdata) {
-            incomePieChartData.add(new PieChart.Data(aTempdata.getCategory(), aTempdata.getValue()));
-        }
-    }
-    */
     private void lineChartView(){
         if(displayView.compareTo("listView")==0){
             container.getChildren().remove(table);
@@ -285,12 +229,11 @@ public class ViewExpenseController {
         xAxis.setLabel("Number of Day");
         lineChart.setTitle("Expense and Income in this week");
         WeeklyLineChart temp = new WeeklyLineChart(transactions);
-        List<int[]> tempdata= temp.getDailyTransaction();
-        for (int i =0; i < tempdata.get(0).length; i ++){
-            expense.getData().add(new XYChart.Data(i+1, tempdata.get(0)[i]));
+        for (int i =0; i < temp.getExpenseTransactions().length; i ++){
+            expense.getData().add(new XYChart.Data(i+1, temp.getExpenseTransactions()[i]));
         }
-        for (int i =0; i < tempdata.get(1).length; i ++){
-            income.getData().add(new XYChart.Data(i+1, tempdata.get(1)[i]));
+        for (int i =0; i < temp.getIncomeTransactions().length; i ++){
+            income.getData().add(new XYChart.Data(i+1, temp.getIncomeTransactions()[i]));
         }
     }
     private void showMonthlyLineChart(){
@@ -299,12 +242,11 @@ public class ViewExpenseController {
         xAxis.setLabel("Number of Day");
         lineChart.setTitle("Expense and Income in this month");
         MonthlyLineChart temp = new MonthlyLineChart(transactions);
-        List<int[]> tempdata= temp.getWeeklyTransaction();
-        for (int i =0; i < tempdata.get(0).length; i ++){
-            expense.getData().add(new XYChart.Data(i+1, tempdata.get(0)[i]));
+        for (int i =0; i < temp.getExpenseTransactions().length; i ++){
+            expense.getData().add(new XYChart.Data(i+1, temp.getExpenseTransactions()[i]));
         }
-        for (int i =0; i < tempdata.get(1).length; i ++){
-            income.getData().add(new XYChart.Data(i+1, tempdata.get(1)[i]));
+        for (int i =0; i < temp.getIncomeTransactions().length; i ++){
+            income.getData().add(new XYChart.Data(i+1, temp.getIncomeTransactions()[i]));
         }
     }
     private void showAnnualyLineChart(){
@@ -313,12 +255,11 @@ public class ViewExpenseController {
         xAxis.setLabel("Number of Month");
         lineChart.setTitle("Expense and Income in this year");
         AnnualLineChart temp = new AnnualLineChart(transactions);
-        List<int[]> tempdata= temp.getMonthlyTransaction();
-        for (int i =0; i < tempdata.get(0).length; i ++){
-            expense.getData().add(new XYChart.Data(i+1, tempdata.get(0)[i]));
+        for (int i =0; i < temp.getExpenseTransactions().length; i ++){
+            expense.getData().add(new XYChart.Data(i+1, temp.getExpenseTransactions()[i]));
         }
-        for (int i =0; i < tempdata.get(1).length; i ++){
-            income.getData().add(new XYChart.Data(i+1, tempdata.get(1)[i]));
+        for (int i =0; i < temp.getIncomeTransactions().length; i ++){
+            income.getData().add(new XYChart.Data(i+1, temp.getIncomeTransactions()[i]));
         }
     }
     @FXML
