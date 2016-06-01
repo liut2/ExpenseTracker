@@ -10,8 +10,8 @@ import java.util.List;
 /**
  * This class handles the display of Annual Line Chart.
  */
-public class AnnualLineChart extends LineChart{
-    public AnnualLineChart(List<Transaction> transactions) {
+public class AnnualBaseLineChart extends BaseLineChart {
+    public AnnualBaseLineChart(List<Transaction> transactions) {
         this.transactions = transactions;
         getMonthlyTransaction();
     }

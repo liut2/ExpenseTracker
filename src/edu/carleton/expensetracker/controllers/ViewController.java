@@ -3,9 +3,10 @@ package edu.carleton.expensetracker.controllers;
 import edu.carleton.expensetracker.Main;
 import edu.carleton.expensetracker.model.Record;
 import edu.carleton.expensetracker.model.Transaction;
-import edu.carleton.expensetracker.model.lineCharts.AnnualLineChart;
-import edu.carleton.expensetracker.model.lineCharts.MonthlyLineChart;
-import edu.carleton.expensetracker.model.lineCharts.WeeklyLineChart;
+import edu.carleton.expensetracker.model.lineCharts.AnnualBaseLineChart;
+import edu.carleton.expensetracker.model.lineCharts.BaseLineChart;
+import edu.carleton.expensetracker.model.lineCharts.MonthlyBaseLineChart;
+import edu.carleton.expensetracker.model.lineCharts.WeeklyBaseLineChart;
 import edu.carleton.expensetracker.model.listView.AnnualListView;
 import edu.carleton.expensetracker.model.listView.DailyListView;
 import edu.carleton.expensetracker.model.listView.MonthlyListView;
@@ -219,48 +220,32 @@ public class ViewController {
         }
         displayView = "lineChart";
         container.getChildren().add(1,lineChart);
-
         if(timeRange.compareTo("week") == 0 || timeRange.compareTo("day") == 0){
-            showDailyLineChart();
+            showLineChart("day");
         }else if(timeRange.compareTo("month") == 0){
-            showMonthlyLineChart();
+            showLineChart("month");
         }else if(timeRange.compareTo("year") == 0){
-            showAnnualyLineChart();
+            showLineChart("year");
         }
     }
 
-    private void showDailyLineChart(){
+    private void showLineChart(String timeRange){
         income.getData().clear();
         expense.getData().clear();
-        xAxis.setLabel("Number of Day");
-        lineChart.setTitle("Expense and Income in this week");
-        WeeklyLineChart temp = new WeeklyLineChart(transactions);
-        for (int i =0; i < temp.getExpenseTransactions().length; i ++){
-            expense.getData().add(new XYChart.Data(i+1, temp.getExpenseTransactions()[i]));
+        BaseLineChart temp;
+        if(timeRange.compareTo("week") == 0 || timeRange.compareTo("day") == 0){
+            xAxis.setLabel("Number of Day");
+            lineChart.setTitle("Expense and Income in this week");
+            temp = new WeeklyBaseLineChart(transactions);
+        }else if(timeRange.compareTo("month") == 0){
+            xAxis.setLabel("Number of Day");
+            lineChart.setTitle("Expense and Income in this month");
+            temp = new MonthlyBaseLineChart(transactions);
+        }else{
+            xAxis.setLabel("Number of Month");
+            lineChart.setTitle("Expense and Income in this year");
+            temp = new AnnualBaseLineChart(transactions);
         }
-        for (int i =0; i < temp.getIncomeTransactions().length; i ++){
-            income.getData().add(new XYChart.Data(i+1, temp.getIncomeTransactions()[i]));
-        }
-    }
-    private void showMonthlyLineChart(){
-        income.getData().clear();
-        expense.getData().clear();
-        xAxis.setLabel("Number of Day");
-        lineChart.setTitle("Expense and Income in this month");
-        MonthlyLineChart temp = new MonthlyLineChart(transactions);
-        for (int i =0; i < temp.getExpenseTransactions().length; i ++){
-            expense.getData().add(new XYChart.Data(i+1, temp.getExpenseTransactions()[i]));
-        }
-        for (int i =0; i < temp.getIncomeTransactions().length; i ++){
-            income.getData().add(new XYChart.Data(i+1, temp.getIncomeTransactions()[i]));
-        }
-    }
-    private void showAnnualyLineChart(){
-        income.getData().clear();
-        expense.getData().clear();
-        xAxis.setLabel("Number of Month");
-        lineChart.setTitle("Expense and Income in this year");
-        AnnualLineChart temp = new AnnualLineChart(transactions);
         for (int i =0; i < temp.getExpenseTransactions().length; i ++){
             expense.getData().add(new XYChart.Data(i+1, temp.getExpenseTransactions()[i]));
         }
@@ -280,7 +265,7 @@ public class ViewController {
         }else if(displayView.compareTo("lineChart") == 0){
             income.getData().clear();
             expense.getData().clear();
-            showDailyLineChart();
+            showLineChart("day");
         }else{
             expensePieChartData.clear();
             incomePieChartData.clear();
@@ -300,7 +285,7 @@ public class ViewController {
             data.clear();
             data.addAll(tempData);
         }else if(displayView.compareTo("lineChart") == 0){
-            showDailyLineChart();
+            showLineChart("day");
         }else{
             expensePieChartData.clear();
             incomePieChartData.clear();
@@ -320,7 +305,7 @@ public class ViewController {
             data.clear();
             data.addAll(tempData);
         }else if(displayView.compareTo("lineChart") == 0){
-            showMonthlyLineChart();
+            showLineChart("month");
         }else{
             expensePieChartData.clear();
             incomePieChartData.clear();
@@ -340,7 +325,7 @@ public class ViewController {
             data.clear();
             data.addAll(tempData);
         }else if(displayView.compareTo("lineChart") == 0){
-            showAnnualyLineChart();
+            showLineChart("year");
         }else{
             expensePieChartData.clear();
             incomePieChartData.clear();

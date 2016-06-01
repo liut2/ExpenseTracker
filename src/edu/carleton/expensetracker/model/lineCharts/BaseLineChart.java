@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * This class handles the display of Line Chart.
  */
-public class LineChart {
+public class BaseLineChart {
     int[] expenseTransactionPerUnit;
     int[] incomeTransactionPerUnit;
     List<Transaction> transactions;

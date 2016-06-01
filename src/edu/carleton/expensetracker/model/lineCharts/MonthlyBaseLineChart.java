@@ -11,8 +11,8 @@ import java.util.List;
  * This class handles the display of Monthly Line Chart.
  */
 
-public class MonthlyLineChart extends LineChart{
-    public MonthlyLineChart(List<Transaction> transactions) {
+public class MonthlyBaseLineChart extends BaseLineChart {
+    public MonthlyBaseLineChart(List<Transaction> transactions) {
         this.transactions = transactions;
         getWeeklyTransaction();
     }
