@@ -145,20 +145,50 @@ public class ViewExpenseController {
         incomeChart = new PieChart(incomePieChartData);
         incomePieChartData.clear();
         expensePieChartData.clear();
+
         if(timeRange.compareTo("day") == 0){
-            showDailyPieChart();
+            String datetype = "Daily";
+            DailyPieChart dailyPieChart = new DailyPieChart(transactions);
+            showPieChart(datetype, dailyPieChart);
         }else if(timeRange.compareTo("week") == 0){
-            showWeeklyPieChart();
+            String datetype = "Weekly";
+            WeeklyPieChart weeklyPieChart = new WeeklyPieChart(transactions);
+            showPieChart(datetype, weeklyPieChart);
         }else if(timeRange.compareTo("month") == 0){
-            showMonthlyPieChart();
+            String datetype = "Monthly";
+            MonthlyPieChart monthlyPieChart = new MonthlyPieChart(transactions);
+            showPieChart(datetype, monthlyPieChart);
         }else{
-            showAnnuallyPieChart();
+            String datetype = "Annual";
+            AnnualPieChart annualPieChart = new AnnualPieChart(transactions);
+            showPieChart(datetype, annualPieChart);
         }
         hContainer = new HBox();
         hContainer.getChildren().addAll(expenseChart,incomeChart);
         container.getChildren().add(1,hContainer);
     }
 
+    /**
+     * This helper function helps rendering the pieChart with corresponding date range.
+     * @param datetype
+     * @param pieChart
+     */
+    private void showPieChart(String datetype, edu.carleton.expensetracker.model.pieCharts.PieChart pieChart) {
+        expenseChart.setTitle(datetype + " Expense");
+        incomeChart.setTitle(datetype + " Income");
+
+        List<PieChartComponent> expenseComponents = pieChart.getExpenseComponents();
+
+        for (PieChartComponent component : expenseComponents) {
+            expensePieChartData.add(new PieChart.Data(component.getCategory(), component.getValue()));
+        }
+
+        List<PieChartComponent> incomeComponents = pieChart.getIncomeComponents();
+        for (PieChartComponent component : incomeComponents) {
+            incomePieChartData.add(new PieChart.Data(component.getCategory(), component.getValue()));
+        }
+    }
+    /*
     private void showDailyPieChart(){
         expenseChart.setTitle("Daily Expense");
         incomeChart.setTitle("Daily Income");
@@ -214,7 +244,7 @@ public class ViewExpenseController {
             incomePieChartData.add(new PieChart.Data(aTempdata.getCategory(), aTempdata.getValue()));
         }
     }
-
+    */
     private void lineChartView(){
         if(displayView.compareTo("listView")==0){
             container.getChildren().remove(table);
@@ -306,7 +336,9 @@ public class ViewExpenseController {
         }else{
             expensePieChartData.clear();
             incomePieChartData.clear();
-            showDailyPieChart();
+            String datetype = "Daily";
+            DailyPieChart dailyPieChart = new DailyPieChart(transactions);
+            showPieChart(datetype, dailyPieChart);
         }
     }
 
@@ -323,7 +355,9 @@ public class ViewExpenseController {
         }else{
             expensePieChartData.clear();
             incomePieChartData.clear();
-            showWeeklyPieChart();
+            String datetype = "Weekly";
+            WeeklyPieChart weeklyPieChart = new WeeklyPieChart(transactions);
+            showPieChart(datetype, weeklyPieChart);
         }
     }
 
@@ -340,7 +374,9 @@ public class ViewExpenseController {
         }else{
             expensePieChartData.clear();
             incomePieChartData.clear();
-            showMonthlyPieChart();
+            String datetype = "Monthly";
+            MonthlyPieChart monthlyPieChart = new MonthlyPieChart(transactions);
+            showPieChart(datetype, monthlyPieChart);
         }
     }
 
@@ -357,7 +393,9 @@ public class ViewExpenseController {
         }else{
             expensePieChartData.clear();
             incomePieChartData.clear();
-            showAnnuallyPieChart();
+            String datetype = "Annual";
+            AnnualPieChart annualPieChart = new AnnualPieChart(transactions);
+            showPieChart(datetype, annualPieChart);
         }
     }
 

@@ -25,7 +25,7 @@
             <ToggleButton fx:id="year" prefWidth="95"  text="year" onAction = "#onClickYearButton" toggleGroup="$DateType" />
         </HBox>
 
-        <ComboBox fx:id="changeView"  prefWidth="100.0" promptText="List View" styleClass="viewBox" onAction="#onClickCombo">
+        <ComboBox fx:id="changeView"  prefWidth="120.0" promptText="List View" styleClass="viewBox" onAction="#onClickCombo">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="List View" />

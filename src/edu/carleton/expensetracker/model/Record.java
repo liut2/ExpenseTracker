@@ -17,7 +17,7 @@ public class Record implements java.io.Serializable{
     }
 
     /**
-     *  Add a transaction to the record object
+     *  Update the transaction list as a whole to the newest one.
      *  @param transactions
      */
     public void addTransactions(List<Transaction> transactions){
