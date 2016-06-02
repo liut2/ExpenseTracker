@@ -1,2 +1,4 @@
 ﻿##Buglist:
-* In viewcontroller, rewrite showview method,比如可以用showPieChart()和传参数的形式来替代其他四个function里头的冗余代码。
+* 修改一下linechart的名字
+* LineChart only show integer value
+* PieChart没有数据时显示空白（不知道这个算不算bug）
