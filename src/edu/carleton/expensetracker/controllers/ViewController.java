@@ -31,6 +31,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -45,12 +46,6 @@ public class ViewController {
     private TableView table;
     @FXML
     private ToggleButton day;
-    @FXML
-    private ToggleButton week;
-    @FXML
-    private ToggleButton month;
-    @FXML
-    private ToggleButton year;
     @FXML
     private VBox container;
     private LineChart<Number,Number> lineChart;
@@ -80,7 +75,6 @@ public class ViewController {
         day.setSelected(true);
         if(!initialized){
             listViewInit();
-            lineChartViewInit();
             PieChartViewInit();
             initialized = true;
         }
@@ -108,21 +102,6 @@ public class ViewController {
         table.getColumns().addAll(type, value, category, date, note);
     }
 
-    public void lineChartViewInit(){
-        //defining the axes
-        xAxis = new NumberAxis();
-        yAxis = new NumberAxis();
-        //creating the chart
-        lineChart = new LineChart<Number, Number>(xAxis, yAxis);
-        //defining a series
-        income = new XYChart.Series();
-        income.setName("Income");
-        expense = new XYChart.Series();
-        expense.setName("Expense");
-        //populating the series with data
-        lineChart.getData().add(expense);
-        lineChart.getData().add(income);
-    }
 
     public void PieChartViewInit(){
         expenseChart = new PieChart(expensePieChartData);
@@ -215,11 +194,11 @@ public class ViewController {
     private void lineChartView(){
         if(displayView.compareTo("listView")==0){
             container.getChildren().remove(table);
-        }else{
+        }else if(displayView.compareTo("pieChart")==0){
             container.getChildren().remove(hContainer);
         }
         displayView = "lineChart";
-        container.getChildren().add(1,lineChart);
+
         if(timeRange.compareTo("week") == 0 || timeRange.compareTo("day") == 0){
             showLineChart("day");
         }else if(timeRange.compareTo("month") == 0){
@@ -227,11 +206,28 @@ public class ViewController {
         }else if(timeRange.compareTo("year") == 0){
             showLineChart("year");
         }
+        container.getChildren().add(1,lineChart);
     }
 
     private void showLineChart(String timeRange){
-        income.getData().clear();
-        expense.getData().clear();
+        container.getChildren().remove(lineChart);
+        //defining the axes
+        if(timeRange.compareTo("week") == 0 || timeRange.compareTo("day") == 0){
+            xAxis = new NumberAxis(1,7,1);
+        }else if(timeRange.compareTo("month") == 0){
+            Calendar calendar = Calendar.getInstance();
+            xAxis = new NumberAxis(1,calendar.getActualMaximum(Calendar.DAY_OF_MONTH),1);
+        }else{
+            xAxis = new NumberAxis(1,12,1);
+        }
+        yAxis = new NumberAxis();
+        lineChart = new LineChart<Number, Number>(xAxis, yAxis);
+        income = new XYChart.Series();
+        income.setName("Income");
+        expense = new XYChart.Series();
+        expense.setName("Expense");
+        lineChart.getData().add(expense);
+        lineChart.getData().add(income);
         BaseLineChart temp;
         if(timeRange.compareTo("week") == 0 || timeRange.compareTo("day") == 0){
             xAxis.setLabel("Number of Day");
@@ -252,7 +248,9 @@ public class ViewController {
         for (int i =0; i < temp.getIncomeTransactions().length; i ++){
             income.getData().add(new XYChart.Data(i+1, temp.getIncomeTransactions()[i]));
         }
+
     }
+
     @FXML
     public void onClickDayButton(ActionEvent event) {
         timeRange = "day";
@@ -263,9 +261,7 @@ public class ViewController {
             data.clear();
             data.addAll(tempData);
         }else if(displayView.compareTo("lineChart") == 0){
-            income.getData().clear();
-            expense.getData().clear();
-            showLineChart("day");
+            lineChartView();
         }else{
             expensePieChartData.clear();
             incomePieChartData.clear();
@@ -285,7 +281,7 @@ public class ViewController {
             data.clear();
             data.addAll(tempData);
         }else if(displayView.compareTo("lineChart") == 0){
-            showLineChart("day");
+            lineChartView();
         }else{
             expensePieChartData.clear();
             incomePieChartData.clear();
@@ -305,7 +301,7 @@ public class ViewController {
             data.clear();
             data.addAll(tempData);
         }else if(displayView.compareTo("lineChart") == 0){
-            showLineChart("month");
+            lineChartView();
         }else{
             expensePieChartData.clear();
             incomePieChartData.clear();
@@ -325,7 +321,7 @@ public class ViewController {
             data.clear();
             data.addAll(tempData);
         }else if(displayView.compareTo("lineChart") == 0){
-            showLineChart("year");
+            lineChartView();
         }else{
             expensePieChartData.clear();
             incomePieChartData.clear();
