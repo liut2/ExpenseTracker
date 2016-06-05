@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * This annual pie chart class represents annual summary of user's expenses.
  */
-public class AnnualPieChart extends PieChart {
+public class AnnualPieChart extends MyPieChart {
     public AnnualPieChart(List<Transaction> transactions) {
         super(transactions);
         this.transactions = getAnnualTransactions();

@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * This weekly pie chart class represents weekly summary of user's expenses.
  */
-public class WeeklyPieChart extends PieChart {
+public class WeeklyPieChart extends MyPieChart {
     public WeeklyPieChart(List<Transaction> transactions) {
         super(transactions);
         this.transactions = getWeeklyTransactions();

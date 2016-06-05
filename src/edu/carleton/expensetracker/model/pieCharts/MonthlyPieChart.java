@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * This daily pie chart class represents daily summary of user's expenses.
  */
-public class MonthlyPieChart extends PieChart{
+public class MonthlyPieChart extends MyPieChart {
     public MonthlyPieChart(List<Transaction> transactions) {
         super(transactions);
         this.transactions = getMonthlyTransactions();

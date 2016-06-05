@@ -99,9 +99,7 @@ public class CreateController {
 
         Record wrapper = new Record();
         List<Transaction> transactions = wrapper.deserializeRecord();
-        for (Transaction tran : transactions) {
-            System.out.println(tran.toString());
-        }
+
     }
 
     /**
@@ -110,7 +108,6 @@ public class CreateController {
      */
     @FXML
     public void onClickExpenseButton(ActionEvent event) {
-        System.out.println("clicked expense button");
         this.type = "expense";
         addExpenseCategories();
         this.category = "Food";
@@ -122,11 +119,9 @@ public class CreateController {
      */
     @FXML
     public void onClickIncomeButton(ActionEvent event) {
-        System.out.println("clicked income button");
         this.type = "income";
         addIncomeCategories();
         this.category = "Salary";
-        System.out.println("reset category to " + this.category);
     }
 
     /**
@@ -136,7 +131,6 @@ public class CreateController {
     @FXML
     public void onClickDatePicker(ActionEvent event) {
         LocalDate chosenDate = datePicker.getValue();
-        System.out.println(chosenDate.toString());
         checkIfValidDate(chosenDate);
     }
 
@@ -149,7 +143,6 @@ public class CreateController {
         if (categoryList.getValue() != null) {
             this.category = categoryList.getValue().toString();
         }
-        System.out.println("category is " + this.category);
     }
 
     /**
@@ -158,7 +151,6 @@ public class CreateController {
      */
     @FXML
     public void onClickBack(ActionEvent event) {
-        System.out.println("Back to home");
         //redirect to home page
         Stage stageTheEventSourceNodeBelongs = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Main main = new Main();
@@ -204,7 +196,6 @@ public class CreateController {
             transactions.add(tran);
             wrapper.addTransactions(transactions);
             wrapper.serializeRecord();
-            System.out.println("success");
 
             //redirect to home scene
             Stage stageTheEventSourceNodeBelongs = (Stage) ((Node)event.getSource()).getScene().getWindow();

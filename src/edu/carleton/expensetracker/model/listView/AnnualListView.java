@@ -1,6 +1,5 @@
 package edu.carleton.expensetracker.model.listView;
 
-import edu.carleton.expensetracker.model.Record;
 import edu.carleton.expensetracker.model.Transaction;
 
 import java.util.ArrayList;
@@ -11,7 +10,7 @@ import java.util.List;
 /**
  * This class handles the display of AnnualListView. It takes a list of transactions and return a list of transactions within a year
  */
-public class AnnualListView extends ListView{
+public class AnnualListView extends MyListView {
 
     public AnnualListView(List<Transaction> transactions) {
         super(transactions);

@@ -8,10 +8,10 @@ import java.util.List;
 /**
  * This class handles the display of listView
  */
-public class ListView {
+public class MyListView {
     protected List<Transaction> transactions;
 
-    public ListView(List<Transaction> transactions){
+    public MyListView(List<Transaction> transactions){
         this.transactions = transactions;
 
     }

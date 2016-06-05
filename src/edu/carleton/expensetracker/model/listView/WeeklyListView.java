@@ -1,6 +1,5 @@
 package edu.carleton.expensetracker.model.listView;
 
-import edu.carleton.expensetracker.model.Record;
 import edu.carleton.expensetracker.model.Transaction;
 
 import java.util.ArrayList;
@@ -11,7 +10,7 @@ import java.util.List;
 /**
  * This class handles the display of WeeklyListView. It takes a list of transactions and return a list of transactions within a week
  */
-public class WeeklyListView extends ListView{
+public class WeeklyListView extends MyListView {
     public WeeklyListView(List<Transaction> transactions) {
         super(transactions);
         this.transactions = getWeeklyTransactions();

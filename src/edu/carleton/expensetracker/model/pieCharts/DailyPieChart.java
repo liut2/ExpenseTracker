@@ -12,7 +12,7 @@ import static sun.misc.Version.print;
 /**
  * This daily pie chart class represents daily summary of user's expenses.
  */
-public class DailyPieChart extends PieChart {
+public class DailyPieChart extends MyPieChart {
     public DailyPieChart(List<Transaction> transactions) {
         super(transactions);
         this.transactions = getDailyTransactions();

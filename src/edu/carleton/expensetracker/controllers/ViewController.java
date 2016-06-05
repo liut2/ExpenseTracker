@@ -3,10 +3,10 @@ package edu.carleton.expensetracker.controllers;
 import edu.carleton.expensetracker.Main;
 import edu.carleton.expensetracker.model.Record;
 import edu.carleton.expensetracker.model.Transaction;
-import edu.carleton.expensetracker.model.lineCharts.AnnualBaseLineChart;
-import edu.carleton.expensetracker.model.lineCharts.BaseLineChart;
-import edu.carleton.expensetracker.model.lineCharts.MonthlyBaseLineChart;
-import edu.carleton.expensetracker.model.lineCharts.WeeklyBaseLineChart;
+import edu.carleton.expensetracker.model.lineCharts.AnnualLineChart;
+import edu.carleton.expensetracker.model.lineCharts.myLineChart;
+import edu.carleton.expensetracker.model.lineCharts.MonthlyLineChart;
+import edu.carleton.expensetracker.model.lineCharts.WeeklyLineChart;
 import edu.carleton.expensetracker.model.listView.AnnualListView;
 import edu.carleton.expensetracker.model.listView.DailyListView;
 import edu.carleton.expensetracker.model.listView.MonthlyListView;
@@ -48,69 +48,77 @@ public class ViewController {
     private ToggleButton day;
     @FXML
     private VBox container;
+
     private LineChart<Number,Number> lineChart;
-    private TableColumn type;
-    private TableColumn note;
-    private TableColumn value;
-    private TableColumn category;
-    private TableColumn date;
     private final ObservableList<Transaction> data = FXCollections.observableArrayList();
     private String timeRange = "day";
     private String displayView = "listView";
     private List<Transaction> transactions = new ArrayList<Transaction>();
-    private NumberAxis xAxis;
-    private NumberAxis yAxis;
-    private XYChart.Series expense;
-    private XYChart.Series income;
     private ObservableList<PieChart.Data> expensePieChartData = FXCollections.observableArrayList();
     private ObservableList<PieChart.Data> incomePieChartData = FXCollections.observableArrayList();
     private PieChart expenseChart;
     private PieChart incomeChart;
-    public HBox hContainer;
+    private HBox hContainer;
     private boolean initialized = false;
 
     public void initialize(){
+        // deserialize the record object
         Record wrapper = new Record();
         transactions = wrapper.deserializeRecord();
+        // select the day button
         day.setSelected(true);
+        // initialize the list view and pie chart view if not initialized
         if(!initialized){
             listViewInit();
             PieChartViewInit();
             initialized = true;
         }
+        // display the list view
         listView();
     }
 
+    /**
+     * initialize the list view
+     */
     private void listViewInit(){
-        System.out.println("list view init");
-        type = new TableColumn("type");
+        // create 5 column, each representing a property of a transaction
+        TableColumn type = new TableColumn("type");
         type.setCellValueFactory(
                 new PropertyValueFactory<Transaction, String>("type"));
-        note = new TableColumn("note");
+        TableColumn note = new TableColumn("note");
         note.setMinWidth(200);
         note.setCellValueFactory(
                 new PropertyValueFactory<Transaction, String>("note"));
-        value = new TableColumn("value");
+        TableColumn  value = new TableColumn("value");
         value.setCellValueFactory(
                 new PropertyValueFactory<Transaction, String>("value"));
-        date = new TableColumn("date");
+        TableColumn date = new TableColumn("date");
         date.setCellValueFactory(
                 new PropertyValueFactory<Transaction, String>("displayDate"));
-        category = new TableColumn("category");
+        TableColumn category = new TableColumn("category");
         category.setCellValueFactory(
                 new PropertyValueFactory<Transaction, String>("category"));
+        // add 5 columns to the table
         table.getColumns().addAll(type, value, category, date, note);
     }
 
-
-    public void PieChartViewInit(){
+    /**
+     * initialize the pie chart view
+     */
+    private void PieChartViewInit(){
+        // create the expense pie chart and the income pie chart
         expenseChart = new PieChart(expensePieChartData);
         incomeChart = new PieChart(incomePieChartData);
+        // create the Hbox container and add two pie charts to the container
         hContainer = new HBox();
         hContainer.getChildren().addAll(expenseChart,incomeChart);
     }
 
+    /**
+     * display the list view
+     */
     public void listView(){
+        // remove the object that is displayed currently
         if(displayView.compareTo("lineChart") == 0){
             container.getChildren().remove(lineChart);
             container.getChildren().add(1,table);
@@ -118,8 +126,9 @@ public class ViewController {
             container.getChildren().remove(hContainer);
             container.getChildren().add(1,table);
         }
+        // set the display view to list
         displayView = "listView";
-
+        // get the data for the indicated time range
         List<Transaction> tempData;
         if(timeRange.compareTo("day") == 0){
             DailyListView temp = new DailyListView(transactions);
@@ -134,50 +143,60 @@ public class ViewController {
             AnnualListView temp = new AnnualListView(transactions);
             tempData = temp.getAnnualTransactions();
         }
+        // clean up the previous data and add the new data
         data.clear();
         data.addAll(tempData);
+        // add the data to the table
         table.setItems(data);
     }
 
+    /**
+     * display the pie chart view
+     */
     private void pieChartView(){
-        System.out.println("pie view init");
+        // remove the object that is displayed currently
         if(displayView.compareTo("listView") == 0) {
             container.getChildren().remove(table);
         }else if(displayView.compareTo("lineChart") == 0){
             container.getChildren().remove(lineChart);
         }
+        // set the display view to pie chart
         displayView = "pieChart";
-
+        // clear the data in the pie charts previously
         incomePieChartData.clear();
         expensePieChartData.clear();
+        // display the pie chart according to the time range
         if(timeRange.compareTo("day") == 0){
-            String datetype = "Daily";
+            String dateType = "Daily";
             DailyPieChart dailyPieChart = new DailyPieChart(transactions);
-            showPieChart(datetype, dailyPieChart);
+            showPieChart(dateType, dailyPieChart);
         }else if(timeRange.compareTo("week") == 0){
-            String datetype = "Weekly";
+            String dateType = "Weekly";
             WeeklyPieChart weeklyPieChart = new WeeklyPieChart(transactions);
-            showPieChart(datetype, weeklyPieChart);
+            showPieChart(dateType, weeklyPieChart);
         }else if(timeRange.compareTo("month") == 0){
-            String datetype = "Monthly";
+            String dateType = "Monthly";
             MonthlyPieChart monthlyPieChart = new MonthlyPieChart(transactions);
-            showPieChart(datetype, monthlyPieChart);
+            showPieChart(dateType, monthlyPieChart);
         }else{
-            String datetype = "Annual";
+            String dateType = "Annual";
             AnnualPieChart annualPieChart = new AnnualPieChart(transactions);
-            showPieChart(datetype, annualPieChart);
+            showPieChart(dateType, annualPieChart);
         }
+        // display the hContainer
         container.getChildren().add(1,hContainer);
     }
 
     /**
      * This helper function helps rendering the pieChart with corresponding date range.
-     * @param datetype
-     * @param pieChart
+     * @param dateType the indicated time range
+     * @param pieChart the pie chart object
      */
-    private void showPieChart(String datetype, edu.carleton.expensetracker.model.pieCharts.PieChart pieChart) {
-        expenseChart.setTitle(datetype + " Expense");
-        incomeChart.setTitle(datetype + " Income");
+    private void showPieChart(String dateType, MyPieChart pieChart) {
+        expensePieChartData.clear();
+        incomePieChartData.clear();
+        expenseChart.setTitle(dateType + " Expense");
+        incomeChart.setTitle(dateType + " Income");
 
         List<PieChartComponent> expenseComponents = pieChart.getExpenseComponents();
 
@@ -191,14 +210,19 @@ public class ViewController {
         }
     }
 
+    /**
+     * display the line chart view
+     */
     private void lineChartView(){
+        // remove the object that is displayed currently
         if(displayView.compareTo("listView")==0){
             container.getChildren().remove(table);
         }else if(displayView.compareTo("pieChart")==0){
             container.getChildren().remove(hContainer);
         }
+        // set the display view to line Chart
         displayView = "lineChart";
-
+        // display the line chart according to the time range
         if(timeRange.compareTo("week") == 0 || timeRange.compareTo("day") == 0){
             showLineChart("day");
         }else if(timeRange.compareTo("month") == 0){
@@ -209,39 +233,53 @@ public class ViewController {
         container.getChildren().add(1,lineChart);
     }
 
+    /**
+     * This helper function helps rendering the lineChart with corresponding date range.
+     * @param timeRange the indicated time range
+     */
     private void showLineChart(String timeRange){
-        container.getChildren().remove(lineChart);
-        //defining the axes
+        // remove the line chart if there is already a line chart displaying
+        if(container.getChildren().contains(lineChart)){
+            container.getChildren().remove(lineChart);
+        }
+        //defining the x axes according to the time range
+        NumberAxis xAxis;
         if(timeRange.compareTo("week") == 0 || timeRange.compareTo("day") == 0){
             xAxis = new NumberAxis(1,7,1);
+            xAxis.setLabel("Number of Day");
         }else if(timeRange.compareTo("month") == 0){
             Calendar calendar = Calendar.getInstance();
             xAxis = new NumberAxis(1,calendar.getActualMaximum(Calendar.DAY_OF_MONTH),1);
+            xAxis.setLabel("Number of Day");
         }else{
             xAxis = new NumberAxis(1,12,1);
+            xAxis.setLabel("Number of Month");
         }
-        yAxis = new NumberAxis();
+        // define the yAxis
+        NumberAxis yAxis = new NumberAxis();
+        // define the line chart
         lineChart = new LineChart<Number, Number>(xAxis, yAxis);
-        income = new XYChart.Series();
+        // define 2 series, income and expense
+        XYChart.Series income = new XYChart.Series();
         income.setName("Income");
-        expense = new XYChart.Series();
+        XYChart.Series expense = new XYChart.Series();
         expense.setName("Expense");
+        // add the two series to the line chart
         lineChart.getData().add(expense);
         lineChart.getData().add(income);
-        BaseLineChart temp;
+        // set line chart's name and data according to the time range
+        myLineChart temp;
         if(timeRange.compareTo("week") == 0 || timeRange.compareTo("day") == 0){
-            xAxis.setLabel("Number of Day");
             lineChart.setTitle("Expense and Income in this week");
-            temp = new WeeklyBaseLineChart(transactions);
+            temp = new WeeklyLineChart(transactions);
         }else if(timeRange.compareTo("month") == 0){
-            xAxis.setLabel("Number of Day");
             lineChart.setTitle("Expense and Income in this month");
-            temp = new MonthlyBaseLineChart(transactions);
+            temp = new MonthlyLineChart(transactions);
         }else{
-            xAxis.setLabel("Number of Month");
             lineChart.setTitle("Expense and Income in this year");
-            temp = new AnnualBaseLineChart(transactions);
+            temp = new AnnualLineChart(transactions);
         }
+        // add the data to expense and income
         for (int i =0; i < temp.getExpenseTransactions().length; i ++){
             expense.getData().add(new XYChart.Data(i+1, temp.getExpenseTransactions()[i]));
         }
@@ -251,10 +289,14 @@ public class ViewController {
 
     }
 
+
+    /**
+     * display the view object, on click the day button
+     * @param event
+     */
     @FXML
     public void onClickDayButton(ActionEvent event) {
         timeRange = "day";
-        System.out.println("day button clicked");
         if(displayView.compareTo("listView") == 0){
             DailyListView temp = new DailyListView(transactions);
             List<Transaction> tempData = temp.getDailyTransactions();
@@ -263,18 +305,19 @@ public class ViewController {
         }else if(displayView.compareTo("lineChart") == 0){
             lineChartView();
         }else{
-            expensePieChartData.clear();
-            incomePieChartData.clear();
-            String datetype = "Daily";
+            String dateType = "Daily";
             DailyPieChart dailyPieChart = new DailyPieChart(transactions);
-            showPieChart(datetype, dailyPieChart);
+            showPieChart(dateType, dailyPieChart);
         }
     }
 
+    /**
+     * display the view object, on click the week button
+     * @param event
+     */
     @FXML
     public void onClickWeekButton(ActionEvent event) {
         timeRange = "week";
-        System.out.println("week button clicked");
         if(displayView.compareTo("listView") == 0){
             WeeklyListView temp = new WeeklyListView(transactions);
             List<Transaction> tempData = temp.getWeeklyTransactions();
@@ -283,18 +326,19 @@ public class ViewController {
         }else if(displayView.compareTo("lineChart") == 0){
             lineChartView();
         }else{
-            expensePieChartData.clear();
-            incomePieChartData.clear();
-            String datetype = "Weekly";
+            String dateType = "Weekly";
             WeeklyPieChart weeklyPieChart = new WeeklyPieChart(transactions);
-            showPieChart(datetype, weeklyPieChart);
+            showPieChart(dateType, weeklyPieChart);
         }
     }
 
+    /**
+     * display the view object, on click the month button
+     * @param event
+     */
     @FXML
     public void onClickMonthButton(ActionEvent event) {
         timeRange = "month";
-        System.out.println("month button clicked");
         if(displayView.compareTo("listView") == 0){
             MonthlyListView temp = new MonthlyListView(transactions);
             List<Transaction> tempData = temp.getMonthlyTransactions();
@@ -303,18 +347,19 @@ public class ViewController {
         }else if(displayView.compareTo("lineChart") == 0){
             lineChartView();
         }else{
-            expensePieChartData.clear();
-            incomePieChartData.clear();
-            String datetype = "Monthly";
+            String dateType = "Monthly";
             MonthlyPieChart monthlyPieChart = new MonthlyPieChart(transactions);
-            showPieChart(datetype, monthlyPieChart);
+            showPieChart(dateType, monthlyPieChart);
         }
     }
 
+    /**
+     * display the view object, on click the year button
+     * @param event
+     */
     @FXML
     public void onClickYearButton(ActionEvent event) {
         timeRange = "year";
-        System.out.println("year button clicked");
         if(displayView.compareTo("listView") == 0){
             AnnualListView temp = new AnnualListView(transactions);
             List<Transaction> tempData = temp.getAnnualTransactions();
@@ -323,14 +368,16 @@ public class ViewController {
         }else if(displayView.compareTo("lineChart") == 0){
             lineChartView();
         }else{
-            expensePieChartData.clear();
-            incomePieChartData.clear();
-            String datetype = "Annual";
+            String dateType = "Annual";
             AnnualPieChart annualPieChart = new AnnualPieChart(transactions);
-            showPieChart(datetype, annualPieChart);
+            showPieChart(dateType, annualPieChart);
         }
     }
 
+    /**
+     * change the display view, on click the combo
+     * @param event
+     */
     @FXML
     public void onClickCombo(ActionEvent event){
         String value = changeView.getValue();

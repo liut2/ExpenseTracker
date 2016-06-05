@@ -8,46 +8,45 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * This class handles the display of Monthly Line Chart.
+ * This class handles the display of Annual Line Chart.
  */
-
-public class MonthlyBaseLineChart extends BaseLineChart {
-    public MonthlyBaseLineChart(List<Transaction> transactions) {
+public class AnnualLineChart extends myLineChart {
+    public AnnualLineChart(List<Transaction> transactions) {
         this.transactions = transactions;
-        getWeeklyTransaction();
+        getMonthlyTransaction();
     }
 
     /**
      *  Get a list of integers each represents the total expense or income within a month
      *  @return tempList
      */
-    public void getWeeklyTransaction() {
+    public void getMonthlyTransaction() {
         Calendar cal = Calendar.getInstance();
-
         cal.set(Calendar.HOUR_OF_DAY, 0);
         cal.clear(Calendar.MINUTE);
         cal.clear(Calendar.SECOND);
         cal.clear(Calendar.MILLISECOND);
-        cal.set(Calendar.DAY_OF_MONTH, 1);
-        int firstDay = cal.getTime().getDate();
 
-        int[] expenseList = new int[cal.getActualMaximum(Calendar.DAY_OF_MONTH)];
-        int[] incomeList = new int[cal.getActualMaximum(Calendar.DAY_OF_MONTH)];
+        cal.set(Calendar.YEAR, 2016);
+        cal.set(Calendar.DAY_OF_YEAR, 1);
+
+        int[] expenseList = new int[12];
+        int[] incomeList = new int[12];
         List<int[]> tempList = new ArrayList<int[]>();
         int offset;
         for (Transaction tran: this.transactions) {
             Date tempDate = tran.getDate();
             if ((cal.getTime().before(tempDate) || cal.getTime().equals(tempDate))) {
-                offset = tempDate.getDate();
+                offset = tempDate.getMonth();
                 if(tran.getType().compareTo("expense") == 0) {
-                    expenseList[offset-1] += tran.getValue();
+                    expenseList[offset] += tran.getValue();
                 }else{
-                    incomeList[offset-1] += tran.getValue();
+                    incomeList[offset] += tran.getValue();
                 }
             }
         }
         expenseTransactionPerUnit = expenseList;
         incomeTransactionPerUnit = incomeList;
-    }
 
+    }
 }

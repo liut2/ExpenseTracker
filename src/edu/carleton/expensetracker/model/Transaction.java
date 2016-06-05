@@ -27,6 +27,7 @@ public class Transaction implements java.io.Serializable{
     public Transaction(String type){
         this.type = type;
     }
+
     public  String getType(){
         return type;
     }
@@ -50,9 +51,11 @@ public class Transaction implements java.io.Serializable{
     public Date getDate() {
         return date;
     }
+
     public String getDisplayDate(){
         return displayDate;
     }
+
     public void setDate(Date date) {
         this.date = date;
         this.displayDate = new SimpleDateFormat("MM/dd/yyyy").format(date);

@@ -8,36 +8,36 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * This class handles the display of Annual Line Chart.
+ * This class handles the display of Weekly Line Chart.
  */
-public class AnnualBaseLineChart extends BaseLineChart {
-    public AnnualBaseLineChart(List<Transaction> transactions) {
+public class WeeklyLineChart extends myLineChart {
+    public WeeklyLineChart(List<Transaction> transactions) {
         this.transactions = transactions;
-        getMonthlyTransaction();
+        getDailyTransaction();
     }
 
     /**
-     *  Get a list of integers each represents the total expense or income within a month
+     *  Get a list of integers each represents the total expense or income within a day
      *  @return tempList
      */
-    public void getMonthlyTransaction() {
+    public void getDailyTransaction() {
         Calendar cal = Calendar.getInstance();
+
         cal.set(Calendar.HOUR_OF_DAY, 0);
         cal.clear(Calendar.MINUTE);
         cal.clear(Calendar.SECOND);
         cal.clear(Calendar.MILLISECOND);
+        cal.set(Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek());
 
-        cal.set(Calendar.YEAR, 2016);
-        cal.set(Calendar.DAY_OF_YEAR, 1);
-
-        int[] expenseList = new int[12];
-        int[] incomeList = new int[12];
+        int[] expenseList = new int[7];
+        int[] incomeList = new int[7];
         List<int[]> tempList = new ArrayList<int[]>();
         int offset;
+
         for (Transaction tran: this.transactions) {
             Date tempDate = tran.getDate();
             if ((cal.getTime().before(tempDate) || cal.getTime().equals(tempDate))) {
-                offset = tempDate.getMonth();
+                offset = tran.getDate().getDay();
                 if(tran.getType().compareTo("expense") == 0) {
                     expenseList[offset] += tran.getValue();
                 }else{
@@ -49,4 +49,5 @@ public class AnnualBaseLineChart extends BaseLineChart {
         incomeTransactionPerUnit = incomeList;
 
     }
+
 }

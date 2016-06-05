@@ -55,7 +55,6 @@ public class Record implements java.io.Serializable{
                 FileInputStream fileIn = new FileInputStream("./resources/data/record.ser");
                 ObjectInputStream in = new ObjectInputStream(fileIn);
                 e = (Record) in.readObject();
-                System.out.println(e.transactions.size());
                 in.close();
                 fileIn.close();
                 return e == null ? new ArrayList<Transaction>() : e.transactions;

@@ -9,10 +9,10 @@ import java.util.List;
 /**
  * This pie chart serves as the base class for pie chart object
  */
-public class PieChart {
+public class MyPieChart {
     protected List<Transaction> transactions;
 
-    public PieChart(List<Transaction> transactions){
+    public MyPieChart(List<Transaction> transactions){
         this.transactions = transactions;
     }
 
