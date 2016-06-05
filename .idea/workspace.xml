@@ -2,48 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="153e8352-ab2f-49dd-ac41-f3c9ed365d73" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/listView/ListView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/pieCharts/PieChart.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/Transaction.class" afterPath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/Transaction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/listView/AnnualListView.class" afterPath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/listView/AnnualListView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/listView/DailyListView.class" afterPath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/listView/DailyListView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/listView/MonthlyListView.class" afterPath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/listView/MonthlyListView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/listView/WeeklyListView.class" afterPath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/listView/WeeklyListView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/pieCharts/AnnualPieChart.class" afterPath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/pieCharts/AnnualPieChart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/pieCharts/DailyPieChart.class" afterPath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/pieCharts/DailyPieChart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/pieCharts/MonthlyPieChart.class" afterPath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/pieCharts/MonthlyPieChart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/pieCharts/WeeklyPieChart.class" afterPath="$PROJECT_DIR$/out/production/ExpenseTracker/edu/carleton/expensetracker/model/pieCharts/WeeklyPieChart.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/listView/AnnualListView.html" afterPath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/listView/AnnualListView.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/listView/DailyListView.html" afterPath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/listView/DailyListView.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/listView/ListView.html" afterPath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/listView/ListView.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/listView/MonthlyListView.html" afterPath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/listView/MonthlyListView.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/listView/WeeklyListView.html" afterPath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/listView/WeeklyListView.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/pieCharts/AnnualPieChart.html" afterPath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/pieCharts/AnnualPieChart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/pieCharts/DailyPieChart.html" afterPath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/pieCharts/DailyPieChart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/pieCharts/MonthlyPieChart.html" afterPath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/pieCharts/MonthlyPieChart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/pieCharts/PieChart.html" afterPath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/pieCharts/PieChart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/pieCharts/WeeklyPieChart.html" afterPath="$PROJECT_DIR$/Documentation/edu/carleton/expensetracker/model/pieCharts/WeeklyPieChart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/controllers/CreateController.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/controllers/CreateController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/controllers/ViewController.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/controllers/ViewController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/ExpenseTransaction.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/ExpenseTransaction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/Record.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/Record.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/Transaction.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/Transaction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/AnnualListView.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/AnnualListView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/DailyListView.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/DailyListView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/MonthlyListView.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/MonthlyListView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/WeeklyListView.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/WeeklyListView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/pieCharts/AnnualPieChart.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/pieCharts/AnnualPieChart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/pieCharts/DailyPieChart.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/pieCharts/DailyPieChart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/pieCharts/MonthlyPieChart.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/pieCharts/MonthlyPieChart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/pieCharts/WeeklyPieChart.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/pieCharts/WeeklyPieChart.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/AnnualBaseLineChart.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/AnnualLineChart.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/BaseLineChart.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/myLineChart.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/DailyBaseLineChart.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/DailyLineChart.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/MonthlyBaseLineChart.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/MonthlyLineChart.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/WeeklyBaseLineChart.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/WeeklyLineChart.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/ListView.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/MyListView.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/pieCharts/PieChart.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/pieCharts/MyPieChart.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/IncomeTransaction.java" afterPath="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/IncomeTransaction.java" />
     </list>
     <ignored path="ExpenseTracker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ViewController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/controllers/ViewController.java">
+      <file leaf-file-name="MyListView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/MyListView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="380" column="9" selection-start-line="380" selection-start-column="9" selection-end-line="380" selection-end-column="9" />
+            <state relative-caret-position="570">
+              <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -85,67 +46,64 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/controllers/CreateController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="162" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Transaction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/Transaction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+            <state relative-caret-position="627">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/Main.java">
+      <file leaf-file-name="DailyListView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/DailyListView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+            <state relative-caret-position="342">
+              <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myLineChart.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/myLineChart.java">
+      <file leaf-file-name="AnnualListView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/AnnualListView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-              <folding>
-                <element signature="e#509#510#0" expanded="true" />
-                <element signature="e#556#557#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MonthlyLineChart.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/MonthlyLineChart.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+            <state relative-caret-position="95">
+              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExpenseTransaction.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WeeklyPieChart.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/pieCharts/WeeklyPieChart.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="684">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PieChartComponent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/pieCharts/PieChartComponent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExpenseTransaction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/ExpenseTransaction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+            <state relative-caret-position="228">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
-                <element signature="e#170#171#0" expanded="true" />
-                <element signature="e#202#203#0" expanded="true" />
+                <element signature="e#219#220#0" expanded="true" />
+                <element signature="e#251#252#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -154,11 +112,11 @@
       <file leaf-file-name="IncomeTransaction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/IncomeTransaction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            <state relative-caret-position="76">
+              <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
               <folding>
-                <element signature="e#169#170#0" expanded="true" />
-                <element signature="e#200#201#0" expanded="true" />
+                <element signature="e#216#217#0" expanded="true" />
+                <element signature="e#247#248#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -228,18 +186,18 @@
         <option value="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/MonthlyLineChart.java" />
         <option value="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/WeeklyLineChart.java" />
         <option value="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/LineChart.java" />
-        <option value="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/IncomeTransaction.java" />
         <option value="$PROJECT_DIR$/src/edu/carleton/expensetracker/controllers/ViewExpenseController.java" />
         <option value="$PROJECT_DIR$/resources/fxml/view.fxml" />
         <option value="$PROJECT_DIR$/src/edu/carleton/expensetracker/controllers/ViewController2.java" />
         <option value="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/DailyBaseLineChart.java" />
-        <option value="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/ExpenseTransaction.java" />
         <option value="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/Transaction.java" />
         <option value="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/BaseLineChart.java" />
         <option value="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/myLineChart.java" />
         <option value="$PROJECT_DIR$/src/edu/carleton/expensetracker/controllers/CreateController.java" />
         <option value="$PROJECT_DIR$/src/edu/carleton/expensetracker/controllers/ViewController.java" />
         <option value="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/Record.java" />
+        <option value="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/IncomeTransaction.java" />
+        <option value="$PROJECT_DIR$/src/edu/carleton/expensetracker/model/ExpenseTransaction.java" />
       </list>
     </option>
   </component>
@@ -276,6 +234,7 @@
     <panes>
       <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -447,10 +406,27 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fxml" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpenseTracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExpenseTracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -836,11 +812,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769555" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -850,9 +825,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2484375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2410148" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2484375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -861,8 +834,11 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769555" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2410148" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -896,24 +872,24 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/fxml/create.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="38" column="98" selection-start-line="38" selection-start-column="74" selection-end-line="38" selection-end-column="98" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/fxml/view.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/fxml/view.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/controllers/ViewController.java">
@@ -939,13 +915,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/fxml/create.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/css/createExpense.css">
@@ -963,13 +939,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/fxml/view.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/controllers/ViewController.java">
@@ -995,13 +971,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/fxml/create.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/css/createExpense.css">
@@ -1041,14 +1017,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/fxml/create.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="38" column="98" selection-start-line="38" selection-start-column="74" selection-end-line="38" selection-end-column="98" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -1077,29 +1053,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/pieCharts/WeeklyPieChart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/AnnualListView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/MyListView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/controllers/ViewController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-256">
@@ -1109,36 +1062,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/fxml/view.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="128" selection-start-line="11" selection-start-column="128" selection-end-line="11" selection-end-column="128" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/DailyLineChart.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/WeeklyLineChart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1159,14 +1096,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/DailyListView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/AnnualLineChart.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -1175,64 +1104,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/pieCharts/PieChartComponent.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="291">
+          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/IncomeTransaction.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/MonthlyLineChart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding>
-            <element signature="e#169#170#0" expanded="true" />
-            <element signature="e#200#201#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/ExpenseTransaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding>
-            <element signature="e#170#171#0" expanded="true" />
-            <element signature="e#202#203#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/WeeklyListView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="209">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/controllers/CreateController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="162" selection-end-column="7" />
+        <state relative-caret-position="190">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/Transaction.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/WeeklyListView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        <state relative-caret-position="247">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/Main.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+        <state relative-caret-position="38">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/WeeklyLineChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1250,16 +1164,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/controllers/ViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="380" column="9" selection-start-line="380" selection-start-column="9" selection-end-line="380" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/Record.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="-260">
+          <caret line="51" column="47" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -1272,11 +1178,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/lineCharts/MonthlyLineChart.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/DailyListView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        <state relative-caret-position="342">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/AnnualListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/listView/MyListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/pieCharts/WeeklyPieChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/pieCharts/PieChartComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/Record.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/Transaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/IncomeTransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
+          <folding>
+            <element signature="e#216#217#0" expanded="true" />
+            <element signature="e#247#248#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/carleton/expensetracker/model/ExpenseTransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#219#220#0" expanded="true" />
+            <element signature="e#251#252#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
